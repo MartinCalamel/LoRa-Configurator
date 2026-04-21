@@ -34,13 +34,9 @@ int send_msg_uart(unsigned char *msg, int size){
     *   write the message,
     *   and then close the file.
     */
-   char right_msg[size];
-    for (int i=0;i<size;i++){
-        right_msg[size-i]=msg[i];
-    }
-    for(int i=0;i<size;i++){printf("%x",msg[i]);}
+    // for(int i=0;i<size;i++){printf("%x",msg[i]);}  //debug only
     int serial_port = open_serial();
-    write(serial_port, right_msg, size);
+    write(serial_port, msg, size);
     close(serial_port);
 
     return 0;
