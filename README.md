@@ -48,3 +48,5 @@ You need now to setup the device's address.
 It must be a 4 digit hexadecimal address such as `1234` who will be understand as `0x1234`. 
 
 ## Doc
+[ebyte doc](https://www.cdebyte.com/pdf-down.aspx?id=1136)
+
