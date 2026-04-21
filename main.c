@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <termios.h>
 #include <unistd.h>
 
@@ -156,26 +157,44 @@ void select_param(int param){
     }
 }
 
+/**
+ * @param val      : La valeur entière à convertir (32 bits)
+ * @param dest     : Le tableau de destination (doit être assez grand)
+ * @param nb_bytes : Nombre d'octets à extraire (1, 2, 3 ou 4)
+ */
+void int_to_bytes(uint64_t val, uint8_t *dest, int nb_bytes) {
+    for (int i = 0; i < nb_bytes; i++) {
+        // On décale de (nb_bytes - 1 - i) * 8 bits pour commencer par le poids fort
+        // Puis on applique un masque 0xFF pour n'isoler que l'octet voulu
+        dest[i] = (uint8_t)((val >> (8 * (nb_bytes - 1 - i))) & 0xFF);
+    }
+}
+
 void configure_LoRa_module(){
     printf("\n\n-----------------------------\n");
     printf("Message sent via UART...\n");
+    unsigned char buffer[6];
 
     int rate_config = config_DataRate(b, d);
+    int_to_bytes(rate_config, buffer, 4);
     printf("    1.  0x%x\n", rate_config);
-    send_msg_uart((char *)&rate_config, sizeof(rate_config));
+    send_msg_uart(buffer, 4);
 
     int freq_config = setup_frequency(f);
+    int_to_bytes(freq_config, buffer, 4);
     printf("    2.  0x%x\n", freq_config);
-    send_msg_uart((char *)&freq_config, sizeof(freq_config));
+    send_msg_uart(buffer, 4);
 
     int power_config = setup_power(p);
+    int_to_bytes(power_config, buffer, 4);
     printf("    3.  0x%x\n", power_config);
-    send_msg_uart((char *)&power_config, sizeof(power_config));
+    send_msg_uart(buffer, 4);
 
     printf("-----------------------------\n");
 }
 void setup_address(){
     char address[6];
+    unsigned char buffer[6];
     printf("Setup module's address [XXXX]: ");
     if (fgets(address, sizeof(address), stdin)) {
             // Supprimer le caractère de nouvelle ligne '\n' capturé par fgets
@@ -194,8 +213,9 @@ void setup_address(){
     printf("\n\n-----------------------------\n");
     printf("Message sent via UART...\n");
     long int addr_config = config_address((unsigned short)address_int);
+    int_to_bytes(addr_config, buffer, 5);
     printf("    1.  0x%lx\n", addr_config);
-    send_msg_uart((char *)&addr_config, sizeof(addr_config));
+    send_msg_uart(buffer, 5);
     printf("-----------------------------\n");
 }
 
