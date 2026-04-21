@@ -20,7 +20,7 @@ int open_serial(){
 }
 
 
-int send_msg_uart(char *msg, int size){
+int send_msg_uart(unsigned char *msg, int size){
     /* # send_msg_uart
     * ## Fonction
     *   Send message over Uart
@@ -38,6 +38,7 @@ int send_msg_uart(char *msg, int size){
     for (int i=0;i<size;i++){
         right_msg[size-i]=msg[i];
     }
+    for(int i=0;i<size;i++){printf("%x",msg[i]);}
     int serial_port = open_serial();
     write(serial_port, right_msg, size);
     close(serial_port);
