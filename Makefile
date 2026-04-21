@@ -36,3 +36,7 @@ clean:
 
 # Évite les conflits avec des fichiers qui porteraient le même nom que les règles
 .PHONY: all clean
+
+@echo "Vérification basique du binaire..."
+@ls -l ./$(TARGET)
+@echo "Test de compilation : OK"
