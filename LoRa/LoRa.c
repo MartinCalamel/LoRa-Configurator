@@ -2,8 +2,8 @@
 #include "gpio/gpio_utils.h"
 #include <lgpio.h>
 
-#define M0 = 17
-#define M1 = 27
+#define M0 17
+#define M1 27
 
 int send_char_from_int(void *msg, size_t size){
     unsigned char *p = (unsigned char *)msg;
