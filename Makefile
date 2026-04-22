@@ -8,7 +8,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -I. -g
 
 # Fichiers sources (.c)
-SRCS = main.c Uart/Uart.c LoRa/LoRa.c
+SRCS = main.c Uart/Uart.c LoRa/LoRa.c gpio/gpio_utils.c
 
 # Fichiers objets (.o)
 OBJS = $(SRCS:.c=.o)
@@ -16,10 +16,12 @@ OBJS = $(SRCS:.c=.o)
 # Règle par défaut
 all: $(TARGET)
 
+LDLIBS = -llgpio
+
 # Règle pour créer l'exécutable
 $(TARGET): $(OBJS)
 	@mkdir -p build
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(LDLIBS)
 
 # Règle pour compiler chaque fichier .c en .o
 %.o: %.c
