@@ -1,7 +1,5 @@
 <map id="gpio/gpio_utils.h" name="gpio/gpio_utils.h">
-<area shape="rect" id="Node000001" title="Simple GPIO helper library for Raspberry Pi 4 (lgpio backend)" alt="" coords="61,5,190,31"/>
-<area shape="rect" id="Node000002" href="$LoRa_8c.html" title="Implementation of LoRa — simple LoRa configurator." alt="" coords="5,79,107,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,43,69,80,65,77,103,39"/>
-<area shape="rect" id="Node000003" href="$gpio__utils_8c.html" title="Implementation of gpio_utils — simple GPIO output helpers." alt="" coords="131,79,259,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,39,185,77,182,80,144,43"/>
+<area shape="rect" id="Node000001" title="Simple GPIO helper library for Raspberry Pi 4 (lgpio backend)" alt="" coords="5,5,135,31"/>
+<area shape="rect" id="Node000002" href="$gpio__utils_8c.html" title="Implementation of gpio_utils — simple GPIO output helpers." alt="" coords="6,79,134,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,44,73,79,67,79,67,44"/>
 </map>

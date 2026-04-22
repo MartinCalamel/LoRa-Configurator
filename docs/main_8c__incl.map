@@ -12,9 +12,9 @@
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="383,29,409,66,404,69,378,33"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="489,79,564,104"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="398,28,490,70,488,75,396,33"/>
-<area shape="rect" id="Node000008" href="$Uart_8h_source.html" title=" " alt="" coords="589,79,683,104"/>
+<area shape="rect" id="Node000008" href="$Uart_8h.html" title="Simple UART library for Raspberry Pi 4 board." alt="" coords="589,79,683,104"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="406,26,581,73,580,78,405,31"/>
-<area shape="rect" id="Node000009" href="$LoRa_8h_source.html" title=" " alt="" coords="707,79,810,104"/>
+<area shape="rect" id="Node000009" href="$LoRa_8h.html" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="707,79,810,104"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="406,23,694,76,694,81,405,28"/>
 <area shape="rect" id="Node000010" title=" " alt="" coords="721,152,796,177"/>
 <area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="761,104,761,138,756,138,756,104"/>
