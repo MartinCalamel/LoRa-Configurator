@@ -1,11 +1,8 @@
 /**
  * @file  gpio_utils.c
  * @brief Implementation of gpio_utils — simple GPIO output helpers.
- *
- * See gpio_utils.h for full API documentation.
- *
- * Compile:
- *   gcc main.c gpio_utils.c -o app -llgpio
+ * @author Martin Calamel
+ * @date 22/04/2026
  */
 
 #include "gpio_utils.h"

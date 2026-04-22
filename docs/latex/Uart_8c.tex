@@ -1,0 +1,110 @@
+\doxysection{Uart/\+Uart.c File Reference}
+\hypertarget{Uart_8c}{}\label{Uart_8c}\index{Uart/Uart.c@{Uart/Uart.c}}
+
+
+Implementation of uart\+\_\+utils — simple uart send en recv.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+Include dependency graph for Uart.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{Uart_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{Uart_8c_a4330cda7a8b08d5d7f1990166cbfb8cc}{open\+\_\+serial}} ()
+\begin{DoxyCompactList}\small\item\em Open the serial port file to be able to send or receive data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Uart_8c_adbab6d48f2c69c13654732a448823133}{send\+\_\+msg\+\_\+uart}} (unsigned char \texorpdfstring{$\ast$}{*}msg, int size)
+\begin{DoxyCompactList}\small\item\em Send message over Uart. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Uart_8c_a6979dd29c17c24c5a9a11c3f13e71c04}{recv\+\_\+msg\+\_\+uart}} (int buffer\+\_\+size)
+\begin{DoxyCompactList}\small\item\em receive message over uart \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of uart\+\_\+utils — simple uart send en recv. 
+
+\begin{DoxyAuthor}{Author}
+Martin Calamel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22/04/2026 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Uart_8c_a4330cda7a8b08d5d7f1990166cbfb8cc}\label{Uart_8c_a4330cda7a8b08d5d7f1990166cbfb8cc} 
+\index{Uart.c@{Uart.c}!open\_serial@{open\_serial}}
+\index{open\_serial@{open\_serial}!Uart.c@{Uart.c}}
+\doxysubsubsection{\texorpdfstring{open\_serial()}{open\_serial()}}
+{\footnotesize\ttfamily int open\+\_\+serial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Open the serial port file to be able to send or receive data. 
+
+\begin{DoxyReturn}{Returns}
+\{serial\+\_\+port\} \+: int =\texorpdfstring{$>$}{>} id of the file (use for read and write function) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+open the /dev/tty\+S0 file (usually the serial 0 file) 
+\end{DoxyNote}
+\Hypertarget{Uart_8c_a6979dd29c17c24c5a9a11c3f13e71c04}\label{Uart_8c_a6979dd29c17c24c5a9a11c3f13e71c04} 
+\index{Uart.c@{Uart.c}!recv\_msg\_uart@{recv\_msg\_uart}}
+\index{recv\_msg\_uart@{recv\_msg\_uart}!Uart.c@{Uart.c}}
+\doxysubsubsection{\texorpdfstring{recv\_msg\_uart()}{recv\_msg\_uart()}}
+{\footnotesize\ttfamily int recv\+\_\+msg\+\_\+uart (\begin{DoxyParamCaption}\item[{int}]{buffer\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+receive message over uart 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+\_\+size} & \+: int =\texorpdfstring{$>$}{>} size of the buffer for reading \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+open the serial file, 
+
+prepare the buffer, 
+
+read the buffer with the right size, 
+
+close the serial file, 
+
+display the data. 
+\end{DoxyNote}
+\Hypertarget{Uart_8c_adbab6d48f2c69c13654732a448823133}\label{Uart_8c_adbab6d48f2c69c13654732a448823133} 
+\index{Uart.c@{Uart.c}!send\_msg\_uart@{send\_msg\_uart}}
+\index{send\_msg\_uart@{send\_msg\_uart}!Uart.c@{Uart.c}}
+\doxysubsubsection{\texorpdfstring{send\_msg\_uart()}{send\_msg\_uart()}}
+{\footnotesize\ttfamily int send\+\_\+msg\+\_\+uart (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{msg,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Send message over Uart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & \+: char \texorpdfstring{$\ast$}{*}=\texorpdfstring{$>$}{>} the string message to send \\
+\hline
+{\em size} & \+: int =\texorpdfstring{$>$}{>} the size of the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if all went right 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+open the serial file, 
+
+write the message, 
+
+and then close the file. 
+\end{DoxyNote}

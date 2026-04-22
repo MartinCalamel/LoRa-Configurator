@@ -1,3 +1,10 @@
+/**
+ * @file  main.c
+ * @brief main program of the LoRa configurator
+ * @author Martin Calamel
+ * @date 22/04/2026
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -11,7 +18,7 @@
 char opts_freq[81][20]; // Global
 
 /**
- * initialise the frequency table
+ * @brief initialise the frequency table
  */
 void init_frequences() {
     for (int i = 0; i < 80; i++) {
@@ -31,7 +38,7 @@ short d = 7;
 short p = 2;
 
 /**
- * detect key press without waiting for ENTER
+ * @brief detect key press without waiting for ENTER
  */
 int getch_linux() {
     struct termios oldt, newt;
@@ -46,7 +53,7 @@ int getch_linux() {
 }
 
 /**
- * Fonction d'affichage de l'interface
+ * @brief Fonction d'affichage de l'interface
  * @param param_selectionne : int => indice of the selected parameter
  * @param idx_baud          : int => index of the baudrate's value
  * @param idx_freq          : int => index of the data rate's value
@@ -106,7 +113,7 @@ void afficher_interface(int param_selectionne, int idx_baud, int idx_freq, int i
 }
 
 /**
- * return if a string equals an other
+ * @brief return if a string equals an other
  * @param entree    : char * => input to check
  * @param choix_oui : char * => value
  * @return int 0 for false 1 for True
@@ -116,7 +123,7 @@ int est_positif(char *entree, const char *choix_oui) {
 }
 
 /**
- * Permit to select the spec you want to change
+ * @brief Permit to select the spec you want to change
  * @param indice_depart : int => index actual
  * @param min           : int => index min
  * @param max           : int => index max
@@ -153,7 +160,7 @@ int config_menu(int indice_depart, int min, int max) {
 }
 
 /**
- * navigate between the possible value
+ * @brief navigate between the possible value
  * @param index_actuel  : int => index actual
  * @param max_options   : int => index max
  * @return c            : int => key pressed 
@@ -175,8 +182,8 @@ int gerer_valeur(short *index_actuel, int max_options) {
 }
 
 /**
- * select the value for the param
- * @param 
+ * @brief select the value for the param
+ * @param param     : int => index of the parameter you want to change
  */
 void select_param(int param){
     int sel = param-1;
@@ -194,9 +201,10 @@ void select_param(int param){
 }
 
 /**
- * @param val      : La valeur entière à convertir (32 bits)
- * @param dest     : Le tableau de destination (doit être assez grand)
- * @param nb_bytes : Nombre d'octets à extraire (1, 2, 3 ou 4)
+ * @brief change int to bytes for transmission
+ * @param val      : value to convert
+ * @param dest     : destination table
+ * @param nb_bytes : size
  */
 void int_to_bytes(uint64_t val, uint8_t *dest, int nb_bytes) {
     for (int i = 0; i < nb_bytes; i++) {
@@ -207,7 +215,7 @@ void int_to_bytes(uint64_t val, uint8_t *dest, int nb_bytes) {
 }
 
 /**
- * base on the index get the value for the params and send it over uart
+ * @brief base on the index get the value for the params and send it over uart
  */
 void configure_LoRa_module(){
     printf("\n\n-----------------------------\n");
@@ -233,7 +241,7 @@ void configure_LoRa_module(){
 }
 
 /**
- * Ask the user the address of the module and send it over uart
+ * @brief Ask the user the address of the module and send it over uart
  */
 void setup_address(){
     char address[6];
@@ -263,7 +271,7 @@ void setup_address(){
 }
 
 /**
- * display the menu and do the configuration
+ * @brief display the menu and do the configuration
  */
 void starting_menu(){
     while (1){

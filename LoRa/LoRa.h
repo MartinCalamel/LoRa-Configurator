@@ -1,3 +1,10 @@
+/**
+ * @file  LoRa.c
+ * @brief Implementation of LoRa — simple LoRa configurator.
+ * @author Martin Calamel
+ * @date 22/04/2026
+ */
+
 #ifndef LORA_H
 #define LORA_H
 
