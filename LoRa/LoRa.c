@@ -1,3 +1,10 @@
+/**
+ * @file  LoRa.c
+ * @brief Simple LoRa Library for the E220-900T22D LoRa module
+ * @author Martin Calamel
+ * @date 22/04/2026
+ */
+
 #include <stdio.h>
 #include "gpio/gpio_utils.h"
 #include <lgpio.h>

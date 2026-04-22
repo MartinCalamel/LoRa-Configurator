@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of LoRa — simple LoRa configurator.  
+<p>Simple LoRa Library for the E220-900T22D LoRa module.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="gpio__utils_8h_source.html">gpio/gpio_utils.h</a>&quot;</code><br />
@@ -91,7 +91,7 @@ Include dependency graph for LoRa.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="LoRa_8c__incl.png" border="0" usemap="#aLoRa_2LoRa_8c" alt=""/></div>
 <map name="aLoRa_2LoRa_8c" id="aLoRa_2LoRa_8c">
-<area shape="rect" title="Implementation of LoRa — simple LoRa configurator." alt="" coords="111,5,212,31"/>
+<area shape="rect" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="111,5,212,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,72,104"/>
 <area shape="poly" title=" " alt="" coords="143,33,72,74,69,69,140,28"/>
 <area shape="rect" href="gpio__utils_8h.html" title="Simple GPIO helper library for Raspberry Pi 4 (lgpio backend)" alt="" coords="97,79,226,104"/>
@@ -112,8 +112,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad730f467519a09d994524604e9de0612" id="r_ad730f467519a09d994524604e9de0612"><td class="memItemLeft" align="right" valign="top"><a id="ad730f467519a09d994524604e9de0612" name="ad730f467519a09d994524604e9de0612"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>send_char_from_int</b> (void *msg, size_t size)</td></tr>
+<tr class="memitem:ad730f467519a09d994524604e9de0612" id="r_ad730f467519a09d994524604e9de0612"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#ad730f467519a09d994524604e9de0612">send_char_from_int</a> (void *msg, size_t size)</td></tr>
+<tr class="memdesc:ad730f467519a09d994524604e9de0612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates through the bytes of a generic message and prints them in hex.  <br /></td></tr>
 <tr class="separator:ad730f467519a09d994524604e9de0612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6d37a84104919cd7e027c2704a42db6" id="r_ab6d37a84104919cd7e027c2704a42db6"><td class="memItemLeft" align="right" valign="top">long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#ab6d37a84104919cd7e027c2704a42db6">config_address</a> (unsigned short address)</td></tr>
 <tr class="memdesc:ab6d37a84104919cd7e027c2704a42db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure address of the device to {address}.  <br /></td></tr>
@@ -132,7 +132,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>send_char_from_int</b>
 <tr class="separator:a989560dc4985f23d099ea5b32f6b2fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of LoRa — simple LoRa configurator. </p>
+<div class="textblock"><p>Simple LoRa Library for the E220-900T22D LoRa module. </p>
 <dl class="section author"><dt>Author</dt><dd>Martin Calamel </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>22/04/2026 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -218,6 +218,44 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>send_char_from_int</b>
 |&mdash;Air DataRate [2,1,0] =&gt; 111 : 62.5k (Max) </dd>
 <dd>
 For more details look doc p14-15 </dd></dl>
+
+</div>
+</div>
+<a id="ad730f467519a09d994524604e9de0612" name="ad730f467519a09d994524604e9de0612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad730f467519a09d994524604e9de0612">&#9670;&#160;</a></span>send_char_from_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int send_char_from_int </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterates through the bytes of a generic message and prints them in hex. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>: void * =&gt; pointer to the data to print </td></tr>
+    <tr><td class="paramname">size</td><td>: size_t =&gt; size of the data in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if all went right </dd></dl>
 
 </div>
 </div>
