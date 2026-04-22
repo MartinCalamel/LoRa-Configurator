@@ -1,8 +1,25 @@
 /**
- * @file  LoRa.c
- * @brief Implementation of LoRa — simple LoRa configurator.
- * @author Martin Calamel
- * @date 22/04/2026
+ * @file  LoRa.h
+ * @brief Simple LoRa Library for the E220-900T22D LoRa module
+ * @code
+ *      #include <stdio.h>
+ *      #include "gpio/gpio_utils.h"
+ *      #include <lgpio.h>
+ * 
+ *      set_mode(0);
+ * 
+ *      long int valeur = config_address(0x1234);
+ *      send_char_from_int(&valeur, sizeof(valeur));
+ * 
+ *      int valeur2 = config_DataRate(0b011, 0b111);
+ *      send_char_from_int(&valeur2, sizeof(valeur2));
+ * 
+ *      int valeur3 = setup_frequency(25);
+ *      send_char_from_int(&valeur3, sizeof(valeur3));
+ * 
+ *      int valeur4 = setup_power(2);
+ *      send_char_from_int(&valeur4, sizeof(valeur4));
+ * @endcode
  */
 
 #ifndef LORA_H
@@ -10,14 +27,11 @@
 
 #include <stddef.h>
 
-/* # send_char_from_int
- * ## Fonction
- * Iterates through the bytes of a generic message and prints them in hex.
- * ## Param
- * {msg}  : void * => pointer to the data to print
- * {size} : size_t => size of the data in bytes
- * ## Return
- * 0 if all went right
+/**
+ * @brief Iterates through the bytes of a generic message and prints them in hex.
+ * @param msg  : void * => pointer to the data to print
+ * @param size : size_t => size of the data in bytes
+ * @return 0 if all went right
  */
 int send_char_from_int(void *msg, size_t size);
 
