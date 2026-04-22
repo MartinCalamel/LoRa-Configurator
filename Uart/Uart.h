@@ -18,7 +18,7 @@ int open_serial();
  * ## Return
  * 0 if all went right
  */
-int send_msg_uart(char *msg, int size);
+int send_msg_uart(unsigned char *msg, int size);
 
 /* # recv_msg_uart
  * ## Fonction
