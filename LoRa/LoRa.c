@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "gpio_utils.h"
+#include "gpio/gpio_utils.h"
 #include <lgpio.h>
 
 #define M0 = 17
