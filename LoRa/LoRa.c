@@ -1,4 +1,9 @@
 #include <stdio.h>
+#include "gpio_utils.h"
+#include <lgpio.h>
+
+#define M0 = 17
+#define M1 = 27
 
 int send_char_from_int(void *msg, size_t size){
     unsigned char *p = (unsigned char *)msg;
@@ -73,6 +78,24 @@ int setup_power(int power){
     msg |= power;
     return msg;
 }
+
+/**
+ * set the fonction mode of the module
+ * @param handle    : int => process with the gpio
+ * @param mode      : int => mode you want to set (0->config, 1->transmit)
+ * @return 0 if ok
+ */
+int set_mode(int handle, int mode){
+    if (mode){
+        up_gpio(handle, M0);
+        up_gpio(handle, M1);
+    } else {
+        down_gpio(handle, M0);
+        down_gpio(handle, M1);
+    }
+}
+
+
 
 
 // int main(){

@@ -50,4 +50,12 @@ int setup_frequency(int freq);
  */
 int setup_power();
 
+/**
+ * set the fonction mode of the module
+ * @param handle    : int => process with the gpio
+ * @param mode      : int => mode you want to set (0->config, 1->transmit)
+ * @return 0 if ok
+ */
+int set_mode(int handle, int mode);
+
 #endif /* LORA_H */

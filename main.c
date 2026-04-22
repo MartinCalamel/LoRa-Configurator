@@ -293,8 +293,12 @@ void starting_menu(){
 }
 
 int main() {
+    int handle = lgGpiochipOpen(0);
     init_frequences();
+    set_mode(handle, 0);
     starting_menu();
+    lgGpiochipClose(handle);
+    set_mode(handle, 1);
     // printf("Starting LoRa + UART System...\n\n");
 
     // // 1. Generate LoRa Configuration Messages
