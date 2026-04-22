@@ -10,6 +10,9 @@
 
 char opts_freq[81][20]; // Global
 
+/**
+ * initialise the frequency table
+ */
 void init_frequences() {
     for (int i = 0; i < 80; i++) {
         sprintf(opts_freq[i], "%.3f MHz", 850.125 + i);
@@ -27,6 +30,9 @@ short f = 0;
 short d = 7;
 short p = 2;
 
+/**
+ * detect key press without waiting for ENTER
+ */
 int getch_linux() {
     struct termios oldt, newt;
     int ch;
@@ -39,7 +45,14 @@ int getch_linux() {
     return ch;
 }
 
-
+/**
+ * Fonction d'affichage de l'interface
+ * @param param_selectionne : int => indice of the selected parameter
+ * @param idx_baud          : int => index of the baudrate's value
+ * @param idx_freq          : int => index of the data rate's value
+ * @param idx_pwr           : int => index of the power value
+ * @param color             : int => 0 if no color, >0 if color
+ */
 void afficher_interface(int param_selectionne, int idx_baud, int idx_freq, int idx_data, int idx_pwr, int color) {
     // 1. Préparation des valeurs avec inversion de couleur si sélectionnées
     char v_baud[60], v_freq[60], v_data[60], v_pwr[60];
@@ -92,10 +105,23 @@ void afficher_interface(int param_selectionne, int idx_baud, int idx_freq, int i
     }
 }
 
+/**
+ * return if a string equals an other
+ * @param entree    : char * => input to check
+ * @param choix_oui : char * => value
+ * @return int 0 for false 1 for True
+ */
 int est_positif(char *entree, const char *choix_oui) {
     return strcmp(entree, choix_oui) == 0;
 }
 
+/**
+ * Permit to select the spec you want to change
+ * @param indice_depart : int => index actual
+ * @param min           : int => index min
+ * @param max           : int => index max
+ * @return indice       : int => new index
+ */
 int config_menu(int indice_depart, int min, int max) {
     int indice = indice_depart;
     int c;
@@ -126,6 +152,12 @@ int config_menu(int indice_depart, int min, int max) {
     }
 }
 
+/**
+ * navigate between the possible value
+ * @param index_actuel  : int => index actual
+ * @param max_options   : int => index max
+ * @return c            : int => key pressed 
+ */
 int gerer_valeur(short *index_actuel, int max_options) {
     int c = getch_linux();
     if (c == 27) { // Séquence d'échappement
@@ -142,6 +174,10 @@ int gerer_valeur(short *index_actuel, int max_options) {
     return c; // On retourne la touche pour savoir si c'est 'Entrée' (10)
 }
 
+/**
+ * select the value for the param
+ * @param 
+ */
 void select_param(int param){
     int sel = param-1;
     while (1) {
@@ -170,6 +206,9 @@ void int_to_bytes(uint64_t val, uint8_t *dest, int nb_bytes) {
     }
 }
 
+/**
+ * base on the index get the value for the params and send it over uart
+ */
 void configure_LoRa_module(){
     printf("\n\n-----------------------------\n");
     printf("Message sent via UART...\n");
@@ -192,6 +231,10 @@ void configure_LoRa_module(){
 
     printf("-----------------------------\n");
 }
+
+/**
+ * Ask the user the address of the module and send it over uart
+ */
 void setup_address(){
     char address[6];
     unsigned char buffer[6];
@@ -219,6 +262,9 @@ void setup_address(){
     printf("-----------------------------\n");
 }
 
+/**
+ * display the menu and do the configuration
+ */
 void starting_menu(){
     while (1){
         afficher_interface(0, b, f, d, p, 0);
