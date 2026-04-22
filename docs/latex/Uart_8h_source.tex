@@ -1,0 +1,39 @@
+\doxysection{Uart.\+h}
+\hypertarget{Uart_8h_source}{}\label{Uart_8h_source}\index{Uart/Uart.h@{Uart/Uart.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UART\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UART\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ \#\ open\_serial}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \#\#\ Fonction}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Open\ the\ serial\ port\ file\ to\ be\ able\ to\ send\ or\ receive\ data.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \#\#\ Returns}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \{serial\_port\}\ :\ int\ =>\ id\ of\ the\ file\ (use\ for\ read\ and\ write\ function)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00010\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Uart_8c_a4330cda7a8b08d5d7f1990166cbfb8cc}{open\_serial}}();}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ \#\ send\_msg\_uart}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \#\#\ Fonction}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Send\ message\ over\ Uart}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ \#\#\ Params}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ \{msg\}\ \ \ :\ char\ *=>\ the\ string\ message\ to\ send}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ \{size\}\ \ :\ int\ \ \ =>\ the\ size\ of\ the\ string}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ \#\#\ Return}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ 0\ if\ all\ went\ right}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Uart_8c_adbab6d48f2c69c13654732a448823133}{send\_msg\_uart}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *msg,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ \#\ recv\_msg\_uart}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ \#\#\ Fonction}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ receive\ message\ over\ uart}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ \#\#\ Params}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ \{buffer\_size\}\ \ \ :\ int\ \ \ =>\ size\ of\ the\ buffer\ for\ reading}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ \#\#\ Returns}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ 0\ if\ all\ went\ right}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Uart_8c_a6979dd29c17c24c5a9a11c3f13e71c04}{recv\_msg\_uart}}(\textcolor{keywordtype}{int}\ buffer\_size);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ UART\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,3 +1,10 @@
+/**
+ * @file  LoRa.c
+ * @brief Implementation of LoRa — simple LoRa configurator.
+ * @author Martin Calamel
+ * @date 22/04/2026
+ */
+
 #ifndef LORA_H
 #define LORA_H
 
@@ -49,5 +56,13 @@ int setup_frequency(int freq);
  * {msg} : int => the msg to send to the device to setup power
  */
 int setup_power();
+
+/**
+ * set the fonction mode of the module
+ * @param handle    : int => process with the gpio
+ * @param mode      : int => mode you want to set (0->config, 1->transmit)
+ * @return 0 if ok
+ */
+int set_mode(int handle, int mode);
 
 #endif /* LORA_H */

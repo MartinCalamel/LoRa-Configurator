@@ -1,0 +1,9 @@
+<map id="LoRa/LoRa.c" name="LoRa/LoRa.c">
+<area shape="rect" id="Node000001" title="Implementation of LoRa — simple LoRa configurator." alt="" coords="111,5,212,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,72,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,33,72,74,69,69,140,28"/>
+<area shape="rect" id="Node000003" href="$gpio__utils_8h.html" title="Simple GPIO helper library for Raspberry Pi 4 (lgpio backend)" alt="" coords="97,79,226,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,31,164,65,159,65,159,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="251,79,317,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="182,28,254,69,251,74,180,33"/>
+</map>

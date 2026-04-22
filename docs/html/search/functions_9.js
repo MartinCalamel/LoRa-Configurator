@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['up_5fgpio_0',['up_gpio',['../gpio__utils_8c.html#ac62aae833b894a5204d02812ea705a64',1,'up_gpio(int handle, int gpio_number):&#160;gpio_utils.c'],['../gpio__utils_8h.html#ac62aae833b894a5204d02812ea705a64',1,'up_gpio(int handle, int gpio_number):&#160;gpio_utils.c']]]
+];

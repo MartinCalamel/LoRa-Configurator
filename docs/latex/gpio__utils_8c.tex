@@ -1,0 +1,91 @@
+\doxysection{gpio/gpio\+\_\+utils.c File Reference}
+\hypertarget{gpio__utils_8c}{}\label{gpio__utils_8c}\index{gpio/gpio\_utils.c@{gpio/gpio\_utils.c}}
+
+
+Implementation of gpio\+\_\+utils — simple GPIO output helpers.  
+
+
+{\ttfamily \#include "{}gpio\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include $<$lgpio.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for gpio\+\_\+utils.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{gpio__utils_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{gpio__utils_8c_ac62aae833b894a5204d02812ea705a64}{up\+\_\+gpio}} (int handle, int gpio\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Drive a GPIO pin HIGH (3.\+3 V). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gpio__utils_8c_a7547247148190d9bb77b67d0a63f0575}{down\+\_\+gpio}} (int handle, int gpio\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Drive a GPIO pin LOW (0 V). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of gpio\+\_\+utils — simple GPIO output helpers. 
+
+\begin{DoxyAuthor}{Author}
+Martin Calamel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22/04/2026 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gpio__utils_8c_a7547247148190d9bb77b67d0a63f0575}\label{gpio__utils_8c_a7547247148190d9bb77b67d0a63f0575} 
+\index{gpio\_utils.c@{gpio\_utils.c}!down\_gpio@{down\_gpio}}
+\index{down\_gpio@{down\_gpio}!gpio\_utils.c@{gpio\_utils.c}}
+\doxysubsubsection{\texorpdfstring{down\_gpio()}{down\_gpio()}}
+{\footnotesize\ttfamily int down\+\_\+gpio (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{int}]{gpio\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Drive a GPIO pin LOW (0 V). 
+
+Claims {\ttfamily gpio\+\_\+number} as an output on the chip identified by {\ttfamily handle}, then sets it to logic 0. If the pin is already claimed as output by the same handle, the claim is refreshed transparently.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & GPIO chip handle returned by lg\+Gpiochip\+Open(). \\
+\hline
+\mbox{\texttt{ in}}  & {\em gpio\+\_\+number} & BCM GPIO number (e.\+g. 17 for GPIO17).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+GPIO\+\_\+\+UTILS\+\_\+\+OK on success. 
+
+GPIO\+\_\+\+UTILS\+\_\+\+ERR\+\_\+\+CLAIM if lg\+Gpio\+Claim\+Output() fails. 
+
+GPIO\+\_\+\+UTILS\+\_\+\+ERR\+\_\+\+WRITE if lg\+Gpio\+Write() fails. 
+\end{DoxyReturn}
+\Hypertarget{gpio__utils_8c_ac62aae833b894a5204d02812ea705a64}\label{gpio__utils_8c_ac62aae833b894a5204d02812ea705a64} 
+\index{gpio\_utils.c@{gpio\_utils.c}!up\_gpio@{up\_gpio}}
+\index{up\_gpio@{up\_gpio}!gpio\_utils.c@{gpio\_utils.c}}
+\doxysubsubsection{\texorpdfstring{up\_gpio()}{up\_gpio()}}
+{\footnotesize\ttfamily int up\+\_\+gpio (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{int}]{gpio\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Drive a GPIO pin HIGH (3.\+3 V). 
+
+Claims {\ttfamily gpio\+\_\+number} as an output on the chip identified by {\ttfamily handle}, then sets it to logic 1. If the pin is already claimed as output by the same handle, the claim is refreshed transparently.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & GPIO chip handle returned by lg\+Gpiochip\+Open(). \\
+\hline
+\mbox{\texttt{ in}}  & {\em gpio\+\_\+number} & BCM GPIO number (e.\+g. 17 for GPIO17).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+GPIO\+\_\+\+UTILS\+\_\+\+OK on success. 
+
+GPIO\+\_\+\+UTILS\+\_\+\+ERR\+\_\+\+CLAIM if lg\+Gpio\+Claim\+Output() fails. 
+
+GPIO\+\_\+\+UTILS\+\_\+\+ERR\+\_\+\+WRITE if lg\+Gpio\+Write() fails. 
+\end{DoxyReturn}

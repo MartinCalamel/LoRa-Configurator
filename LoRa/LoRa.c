@@ -1,4 +1,9 @@
 #include <stdio.h>
+#include "gpio/gpio_utils.h"
+#include <lgpio.h>
+
+#define M0 17
+#define M1 27
 
 int send_char_from_int(void *msg, size_t size){
     unsigned char *p = (unsigned char *)msg;
@@ -9,7 +14,7 @@ int send_char_from_int(void *msg, size_t size){
 }
 
 /**
- * Configure address of the device to {address}
+ * @brief Configure address of the device to {address}
  * @param address : unsigned short => the address you want for the device
  * @return msg : long int => the msg to send to the device to setup the address
  * @note 0xC0 : commande to set register
@@ -23,7 +28,7 @@ long int config_address(unsigned short address) {
 }
 
 /**
- * Configure Uart DataRate to defaut (9600)
+ * @brief Configure Uart DataRate to defaut (9600)
  * @param uart  : int => code for the correct baudrate 000 -> 111
  * @param air   : int => code for the correct data rate 000 -> 111
  * @return msg  : int => the msg to send to the device to setup DataRate
@@ -45,7 +50,7 @@ int config_DataRate(int uart, int air){
 }
 
 /**
- * Configure module frequency
+ * @brief Configure module frequency
  * @param freq  : int => frequency you want to setup (850 MHz - 930 MHz)
  * @return msg  : int => the msg to send to the device to setup frequency
  * @note 0xC0 : commande to set register
@@ -60,7 +65,7 @@ int setup_frequency(int freq){
 }
 
 /**
- * Configure power
+ * @brief Configure power
  * @param power : int => code for the correct baudrate 00 -> 11
  * @return msg  : int => the msg to send to the device to setup power
  * @note 0xC0 : commande to set register
@@ -73,6 +78,24 @@ int setup_power(int power){
     msg |= power;
     return msg;
 }
+
+/**
+ * @brief set the fonction mode of the module
+ * @param handle    : int => process with the gpio
+ * @param mode      : int => mode you want to set (0->config, 1->transmit)
+ * @return 0 if ok
+ */
+int set_mode(int handle, int mode){
+    if (mode){
+        up_gpio(handle, M0);
+        up_gpio(handle, M1);
+    } else {
+        down_gpio(handle, M0);
+        down_gpio(handle, M1);
+    }
+}
+
+
 
 
 // int main(){

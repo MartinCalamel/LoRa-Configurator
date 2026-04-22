@@ -1,9 +1,16 @@
+/**
+ * @file  Uart.c
+ * @brief Implementation of uart_utils — simple uart send en recv.
+ * @author Martin Calamel
+ * @date 22/04/2026
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
 
 /**
- * Open the serial port file to be able to send or receive data.
+ * @brief Open the serial port file to be able to send or receive data.
  * 
  * @return {serial_port} : int => id of the file (use for read and write function)
  * @note open the /dev/ttyS0 file (usually the serial 0 file)
@@ -15,7 +22,7 @@ int open_serial(){
 }
 
 /**
- * Send message over Uart
+ * @brief Send message over Uart
  * @param msg   : char *=> the string message to send
  * @param size  : int   => the size of the string
  * @return 0 if all went right
@@ -33,7 +40,7 @@ int send_msg_uart(unsigned char *msg, int size){
 }
 
 /**
- * receive message over uart
+ * @brief receive message over uart
  * @param buffer_size   : int   => size of the buffer for reading
  * @note open the serial file,
  * @note prepare the buffer,
