@@ -1,5 +1,5 @@
-<map id="gpio/gpio_utils.c" name="gpio/gpio_utils.c">
-<area shape="rect" id="Node000001" title="Implementation of gpio_utils — simple GPIO output helpers." alt="" coords="97,5,225,31"/>
+<map id="src/gpio/gpio_utils.c" name="src/gpio/gpio_utils.c">
+<area shape="rect" id="Node000001" title="Implementation of gpio_utils — simple GPIO output helpers." alt="" coords="85,5,236,31"/>
 <area shape="rect" id="Node000002" href="$gpio__utils_8h.html" title="Simple GPIO helper library for Raspberry Pi 4 (lgpio backend)" alt="" coords="5,79,103,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,33,84,73,81,69,142,28"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="127,79,194,104"/>
