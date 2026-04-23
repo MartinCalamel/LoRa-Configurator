@@ -91,4 +91,16 @@ int setup_power();
  */
 int set_mode(int handle, int mode);
 
+/**
+ * @brief Sends a message to a specific LoRa module using Fixed Transmission mode.
+ * * According to Section 5.1 of the manual, in fixed transmission mode, the first 
+ * three bytes of the UART data are used as the target address and channel.
+ * @param address   Target module address (ADDH and ADDL), from 0 to 65535.
+ * @param channel   Target frequency channel (0 to 83).
+ * @param msg       Pointer to the data payload to be sent.
+ * @param msg_size  Size of the payload (Max 200 bytes per packet by default).
+ * @return int      0 on success.
+ */
+int send_msg_LoRa(uint16_t address, uint8_t channel, char *msg, uint8_t msg_size);
+
 #endif /* LORA_H */
