@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <termios.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 #include "src/Uart/Uart.h"
 #include "src/LoRa/LoRa.h"
@@ -307,6 +308,25 @@ int main() {
     starting_menu();
     lgGpiochipClose(handle);
     set_mode(handle, 1);
+
+    int run = 1;
+    pid_t p;
+    p = fork();
+    if (p<0){
+        printf("[ERROR] fork fail\n");// process error
+    } else if (p == 0){
+        // parent process for reading UART
+        while (run){
+            printf("Waiting for data\n");
+            sleep(5);
+            printf("hey");
+            recv_msg_uart(64);
+        }
+    }else{
+        //chile process for writing UART
+        char *msg[] = "hello";
+        send_msg_LoRa(0x1234, 10, msg, sizeof(msg));
+    }
     // printf("Starting LoRa + UART System...\n\n");
 
     // // 1. Generate LoRa Configuration Messages

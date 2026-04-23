@@ -13,8 +13,9 @@
  *     char *msg = "hello";
  *     send_msg_uart(msg, sizeof(msg));
  *     
- *     // Read data over UART
- *     recv_msg_uart(64);
+ *     // Read data over UART with a buffer of 64 Bytes
+ *     char *buffer[64];
+ *     recv_msg_uart(buffer, 64);
  * @endcode
  */
 
@@ -22,12 +23,13 @@
 #define UART_H
 
 /**
- * @brief Open the serial port file to be able to send or receive data.
- * 
- * @return {serial_port} : int => id of the file (use for read and write function)
- * @note open the /dev/ttyS0 file (usually the serial 0 file)
+ * @brief List of status for the UART API.
+ * Those value can be used to debug.
  */
-int open_serial();
+typedef enum{
+    UART_OK = 0,    /**< All went right */
+    UART_FAILED     /**< something is wrong */
+} uart_status;
 
 /**
  * @brief Send message over Uart
@@ -42,6 +44,7 @@ int send_msg_uart(unsigned char *msg, int size);
 
 /**
  * @brief receive message over uart
+ * @param buffer        : char *=> data buffer for UART reading
  * @param buffer_size   : int   => size of the buffer for reading
  * @note open the serial file,
  * @note prepare the buffer,
@@ -49,6 +52,6 @@ int send_msg_uart(unsigned char *msg, int size);
  * @note close the serial file,
  * @note display the data.
  */
-int recv_msg_uart(int buffer_size);
+int recv_msg_uart(char *buffer, int buffer_size);
 
 #endif /* UART_H */
