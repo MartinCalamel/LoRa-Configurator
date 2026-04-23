@@ -12,6 +12,7 @@
 #include <termios.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <lgpio.h>
 
 #include "src/Uart/Uart.h"
 #include "src/LoRa/LoRa.h"
@@ -222,7 +223,6 @@ void int_to_bytes(uint64_t val, uint8_t *dest, int nb_bytes) {
  */
 void setup_address(){
     char address[6];
-    unsigned char buffer[6];
     printf("Setup module's address hex [0000-FFFF]: ");
     if (fgets(address, sizeof(address), stdin)) {
             // Supprimer le caractère de nouvelle ligne '\n' capturé par fgets
@@ -294,13 +294,13 @@ int main() {
             printf("Waiting for data\n");
             sleep(5);
             printf("hey");
-            char *buffer[64];
+            char buffer[64];
             recv_msg_uart(buffer, 64);
             printf("%s", buffer);
         }
     }else{
         //chile process for writing UART
-        char *msg[] = "hello";
+        char msg[] = "hello";
         send_msg_LoRa(0x1234, 10, msg, sizeof(msg));
     }
     // printf("Starting LoRa + UART System...\n\n");
