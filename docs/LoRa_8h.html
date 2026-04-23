@@ -126,6 +126,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a989560dc4985f23d099ea5b32f6b2fbb" id="r_a989560dc4985f23d099ea5b32f6b2fbb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8h.html#a989560dc4985f23d099ea5b32f6b2fbb">set_mode</a> (int handle, int mode)</td></tr>
 <tr class="memdesc:a989560dc4985f23d099ea5b32f6b2fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the fonction mode of the module  <br /></td></tr>
 <tr class="separator:a989560dc4985f23d099ea5b32f6b2fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34fd4893c6a9bc91ead9338f52316d2a" id="r_a34fd4893c6a9bc91ead9338f52316d2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8h.html#a34fd4893c6a9bc91ead9338f52316d2a">send_msg_LoRa</a> (uint16_t address, uint8_t channel, char *msg, uint8_t msg_size)</td></tr>
+<tr class="memdesc:a34fd4893c6a9bc91ead9338f52316d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to a specific LoRa module using Fixed Transmission mode.  <br /></td></tr>
+<tr class="separator:a34fd4893c6a9bc91ead9338f52316d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple LoRa Library for the E220-900T22D LoRa module. </p>
@@ -263,6 +266,61 @@ For more details look doc p14-15 </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if all went right </dd></dl>
+
+</div>
+</div>
+<a id="a34fd4893c6a9bc91ead9338f52316d2a" name="a34fd4893c6a9bc91ead9338f52316d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34fd4893c6a9bc91ead9338f52316d2a">&#9670;&#160;</a></span>send_msg_LoRa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int send_msg_LoRa </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>msg_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends a message to a specific LoRa module using Fixed Transmission mode. </p>
+<ul>
+<li>According to Section 5.1 of the manual, in fixed transmission mode, the first three bytes of the UART data are used as the target address and channel. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>Target module address (ADDH and ADDL), from 0 to 65535. </td></tr>
+    <tr><td class="paramname">channel</td><td>Target frequency channel (0 to 83). </td></tr>
+    <tr><td class="paramname">msg</td><td>Pointer to the data payload to be sent. </td></tr>
+    <tr><td class="paramname">msg_size</td><td>Size of the payload (Max 200 bytes per packet by default). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 on success. </dd></dl>
+</li>
+</ul>
 
 </div>
 </div>
