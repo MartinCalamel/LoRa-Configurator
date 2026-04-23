@@ -75,6 +75,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Uart.h File Reference</div></div>
 </div><!--header-->
@@ -87,25 +88,34 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Uart_8h__dep__incl.png" border="0" usemap="#asrc_2Uart_2Uart_8hdep" alt=""/></div>
 <map name="asrc_2Uart_2Uart_8hdep" id="asrc_2Uart_2Uart_8hdep">
-<area shape="rect" title="Simple UART library for Raspberry Pi 4 board." alt="" coords="5,5,123,31"/>
-<area shape="rect" href="main_8c.html" title="main program of the LoRa configurator" alt="" coords="31,79,97,104"/>
-<area shape="poly" title=" " alt="" coords="67,44,67,79,61,79,61,44"/>
+<area shape="rect" title="Simple UART library for Raspberry Pi 4 board." alt="" coords="100,5,217,31"/>
+<area shape="rect" href="main_8c.html" title="main program of the LoRa configurator" alt="" coords="5,79,72,104"/>
+<area shape="poly" title=" " alt="" coords="129,40,60,81,57,76,126,35"/>
+<area shape="rect" href="LoRa_8c.html" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="97,79,221,104"/>
+<area shape="poly" title=" " alt="" coords="161,44,161,79,156,79,156,44"/>
+<area shape="rect" href="Uart_8c.html" title="Implementation of uart_utils — simple uart send en recv." alt="" coords="245,79,361,104"/>
+<area shape="poly" title=" " alt="" coords="195,34,280,76,278,81,193,39"/>
 </map>
 </div>
 </div>
 <p><a href="Uart_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:af4064a00f70d4cc69cf2100447993f97" id="r_af4064a00f70d4cc69cf2100447993f97"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Uart_8h.html#af4064a00f70d4cc69cf2100447993f97">uart_status</a> { <a class="el" href="Uart_8h.html#af4064a00f70d4cc69cf2100447993f97a525187963c0aaa465f2a35b30b894d07">UART_OK</a> = 0
+, <a class="el" href="Uart_8h.html#af4064a00f70d4cc69cf2100447993f97a391709a2556bc6c78a758c07bb1a55f8">UART_FAILED</a>
+ }</td></tr>
+<tr class="memdesc:af4064a00f70d4cc69cf2100447993f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of status for the UART API. Those value can be used to debug.  <a href="Uart_8h.html#af4064a00f70d4cc69cf2100447993f97">More...</a><br /></td></tr>
+<tr class="separator:af4064a00f70d4cc69cf2100447993f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4330cda7a8b08d5d7f1990166cbfb8cc" id="r_a4330cda7a8b08d5d7f1990166cbfb8cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Uart_8h.html#a4330cda7a8b08d5d7f1990166cbfb8cc">open_serial</a> ()</td></tr>
-<tr class="memdesc:a4330cda7a8b08d5d7f1990166cbfb8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the serial port file to be able to send or receive data.  <br /></td></tr>
-<tr class="separator:a4330cda7a8b08d5d7f1990166cbfb8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbab6d48f2c69c13654732a448823133" id="r_adbab6d48f2c69c13654732a448823133"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Uart_8h.html#adbab6d48f2c69c13654732a448823133">send_msg_uart</a> (unsigned char *msg, int size)</td></tr>
 <tr class="memdesc:adbab6d48f2c69c13654732a448823133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send message over Uart.  <br /></td></tr>
 <tr class="separator:adbab6d48f2c69c13654732a448823133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6979dd29c17c24c5a9a11c3f13e71c04" id="r_a6979dd29c17c24c5a9a11c3f13e71c04"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Uart_8h.html#a6979dd29c17c24c5a9a11c3f13e71c04">recv_msg_uart</a> (int buffer_size)</td></tr>
-<tr class="memdesc:a6979dd29c17c24c5a9a11c3f13e71c04"><td class="mdescLeft">&#160;</td><td class="mdescRight">receive message over uart  <br /></td></tr>
-<tr class="separator:a6979dd29c17c24c5a9a11c3f13e71c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff47f21125795bedee6e25fcf1c9391b" id="r_aff47f21125795bedee6e25fcf1c9391b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Uart_8h.html#aff47f21125795bedee6e25fcf1c9391b">recv_msg_uart</a> (char *buffer, int buffer_size)</td></tr>
+<tr class="memdesc:aff47f21125795bedee6e25fcf1c9391b"><td class="mdescLeft">&#160;</td><td class="mdescRight">receive message over uart  <br /></td></tr>
+<tr class="separator:aff47f21125795bedee6e25fcf1c9391b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple UART library for Raspberry Pi 4 board. </p>
@@ -117,35 +127,38 @@ Functions</h2></td></tr>
 <div class="line"><span class="keywordtype">char</span> *msg = <span class="stringliteral">&quot;hello&quot;</span>;</div>
 <div class="line"><a class="code hl_function" href="Uart_8c.html#adbab6d48f2c69c13654732a448823133">send_msg_uart</a>(msg, <span class="keyword">sizeof</span>(msg));</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Read data over UART</span></div>
-<div class="line"><a class="code hl_function" href="Uart_8c.html#a6979dd29c17c24c5a9a11c3f13e71c04">recv_msg_uart</a>(64);</div>
-<div class="ttc" id="aUart_8c_html_a6979dd29c17c24c5a9a11c3f13e71c04"><div class="ttname"><a href="Uart_8c.html#a6979dd29c17c24c5a9a11c3f13e71c04">recv_msg_uart</a></div><div class="ttdeci">int recv_msg_uart(int buffer_size)</div><div class="ttdoc">receive message over uart</div><div class="ttdef"><b>Definition</b> Uart.c:51</div></div>
-<div class="ttc" id="aUart_8c_html_adbab6d48f2c69c13654732a448823133"><div class="ttname"><a href="Uart_8c.html#adbab6d48f2c69c13654732a448823133">send_msg_uart</a></div><div class="ttdeci">int send_msg_uart(unsigned char *msg, int size)</div><div class="ttdoc">Send message over Uart.</div><div class="ttdef"><b>Definition</b> Uart.c:33</div></div>
+<div class="line"><span class="comment">// Read data over UART with a buffer of 64 Bytes</span></div>
+<div class="line"><span class="keywordtype">char</span> *buffer[64];</div>
+<div class="line"><a class="code hl_function" href="Uart_8c.html#aff47f21125795bedee6e25fcf1c9391b">recv_msg_uart</a>(buffer, 64);</div>
+<div class="ttc" id="aUart_8c_html_adbab6d48f2c69c13654732a448823133"><div class="ttname"><a href="Uart_8c.html#adbab6d48f2c69c13654732a448823133">send_msg_uart</a></div><div class="ttdeci">int send_msg_uart(unsigned char *msg, int size)</div><div class="ttdoc">Send message over Uart.</div><div class="ttdef"><b>Definition</b> Uart.c:37</div></div>
+<div class="ttc" id="aUart_8c_html_aff47f21125795bedee6e25fcf1c9391b"><div class="ttname"><a href="Uart_8c.html#aff47f21125795bedee6e25fcf1c9391b">recv_msg_uart</a></div><div class="ttdeci">int recv_msg_uart(char *buffer, int buffer_size)</div><div class="ttdoc">receive message over uart</div><div class="ttdef"><b>Definition</b> Uart.c:54</div></div>
 <div class="ttc" id="aUart_8h_html"><div class="ttname"><a href="Uart_8h.html">Uart.h</a></div><div class="ttdoc">Simple UART library for Raspberry Pi 4 board.</div></div>
-</div><!-- fragment --> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a4330cda7a8b08d5d7f1990166cbfb8cc" name="a4330cda7a8b08d5d7f1990166cbfb8cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4330cda7a8b08d5d7f1990166cbfb8cc">&#9670;&#160;</a></span>open_serial()</h2>
+</div><!-- fragment --> </div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="af4064a00f70d4cc69cf2100447993f97" name="af4064a00f70d4cc69cf2100447993f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4064a00f70d4cc69cf2100447993f97">&#9670;&#160;</a></span>uart_status</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int open_serial </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">enum <a class="el" href="Uart_8h.html#af4064a00f70d4cc69cf2100447993f97">uart_status</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Open the serial port file to be able to send or receive data. </p>
-<dl class="section return"><dt>Returns</dt><dd>{serial_port} : int =&gt; id of the file (use for read and write function) </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>open the /dev/ttyS0 file (usually the serial 0 file) </dd></dl>
+<p>List of status for the UART API. Those value can be used to debug. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af4064a00f70d4cc69cf2100447993f97a525187963c0aaa465f2a35b30b894d07" name="af4064a00f70d4cc69cf2100447993f97a525187963c0aaa465f2a35b30b894d07"></a>UART_OK&#160;</td><td class="fielddoc"><p>All went right </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af4064a00f70d4cc69cf2100447993f97a391709a2556bc6c78a758c07bb1a55f8" name="af4064a00f70d4cc69cf2100447993f97a391709a2556bc6c78a758c07bb1a55f8"></a>UART_FAILED&#160;</td><td class="fielddoc"><p>something is wrong </p>
+</td></tr>
+</table>
 
 </div>
 </div>
-<a id="a6979dd29c17c24c5a9a11c3f13e71c04" name="a6979dd29c17c24c5a9a11c3f13e71c04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6979dd29c17c24c5a9a11c3f13e71c04">&#9670;&#160;</a></span>recv_msg_uart()</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aff47f21125795bedee6e25fcf1c9391b" name="aff47f21125795bedee6e25fcf1c9391b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff47f21125795bedee6e25fcf1c9391b">&#9670;&#160;</a></span>recv_msg_uart()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,9 +166,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int recv_msg_uart </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>buffer_size</em></td><td>)</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buffer_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -163,6 +186,7 @@ Functions</h2></td></tr>
 <p>receive message over uart </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">buffer</td><td>: char *=&gt; data buffer for UART reading </td></tr>
     <tr><td class="paramname">buffer_size</td><td>: int =&gt; size of the buffer for reading </td></tr>
   </table>
   </dd>
@@ -175,7 +199,19 @@ read the buffer with the right size, </dd>
 <dd>
 close the serial file, </dd>
 <dd>
-display the data. </dd></dl>
+display the data.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>: char *=&gt; data buffer for UART reading </td></tr>
+    <tr><td class="paramname">buffer_size</td><td>: int =&gt; size of the buffer for reading </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>open the serial file, </dd>
+<dd>
+put data on buffer with the right size, </dd>
+<dd>
+close the serial file, </dd></dl>
 
 </div>
 </div>

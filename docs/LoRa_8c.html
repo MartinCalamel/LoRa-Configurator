@@ -75,7 +75,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">LoRa.c File Reference</div></div>
 </div><!--header-->
@@ -88,112 +87,88 @@ $(function() {
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="gpio__utils_8h_source.html">src/gpio/gpio_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Uart_8h_source.html">src/Uart/Uart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LoRa_8h_source.html">src/LoRa/LoRa.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LoRa.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="LoRa_8c__incl.png" border="0" usemap="#asrc_2LoRa_2LoRa_8c" alt=""/></div>
 <map name="asrc_2LoRa_2LoRa_8c" id="asrc_2LoRa_2LoRa_8c">
-<area shape="rect" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="161,5,285,31"/>
+<area shape="rect" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="255,5,379,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,72,104"/>
-<area shape="poly" title=" " alt="" coords="194,33,83,76,81,71,192,28"/>
+<area shape="poly" title=" " alt="" coords="273,33,86,81,85,76,272,28"/>
 <area shape="rect" title=" " alt="" coords="96,79,163,104"/>
-<area shape="poly" title=" " alt="" coords="209,33,157,72,154,68,206,29"/>
+<area shape="poly" title=" " alt="" coords="288,33,174,76,172,71,286,28"/>
 <area shape="rect" title=" " alt="" coords="187,79,258,104"/>
-<area shape="poly" title=" " alt="" coords="225,31,225,65,220,65,220,31"/>
+<area shape="poly" title=" " alt="" coords="304,33,251,72,248,68,301,29"/>
 <area shape="rect" title=" " alt="" coords="282,79,353,104"/>
-<area shape="poly" title=" " alt="" coords="239,29,292,68,289,72,236,33"/>
+<area shape="poly" title=" " alt="" coords="320,31,320,65,315,65,315,31"/>
 <area shape="rect" href="gpio__utils_8h.html" title="Simple GPIO helper library for Raspberry Pi 4 (lgpio backend)" alt="" coords="377,79,529,104"/>
-<area shape="poly" title=" " alt="" coords="261,28,404,72,402,77,259,33"/>
+<area shape="poly" title=" " alt="" coords="340,28,420,70,418,75,338,33"/>
+<area shape="rect" href="Uart_8h.html" title="Simple UART library for Raspberry Pi 4 board." alt="" coords="553,79,671,104"/>
+<area shape="poly" title=" " alt="" coords="365,28,552,73,551,78,364,33"/>
+<area shape="rect" href="LoRa_8h.html" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="695,79,820,104"/>
+<area shape="poly" title=" " alt="" coords="380,27,682,75,681,80,379,32"/>
+<area shape="rect" title=" " alt="" coords="720,152,795,177"/>
+<area shape="poly" title=" " alt="" coords="760,104,760,138,755,138,755,104"/>
 </map>
 </div>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:aa1bdbfb602e7609a6a6e7a3c3e5644f3" id="r_aa1bdbfb602e7609a6a6e7a3c3e5644f3"><td class="memItemLeft" align="right" valign="top"><a id="aa1bdbfb602e7609a6a6e7a3c3e5644f3" name="aa1bdbfb602e7609a6a6e7a3c3e5644f3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>M0</b>&#160;&#160;&#160;17</td></tr>
-<tr class="separator:aa1bdbfb602e7609a6a6e7a3c3e5644f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac597abe7cf610f262f7aaec53ed1d413" id="r_ac597abe7cf610f262f7aaec53ed1d413"><td class="memItemLeft" align="right" valign="top"><a id="ac597abe7cf610f262f7aaec53ed1d413" name="ac597abe7cf610f262f7aaec53ed1d413"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>M1</b>&#160;&#160;&#160;27</td></tr>
-<tr class="separator:ac597abe7cf610f262f7aaec53ed1d413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad730f467519a09d994524604e9de0612" id="r_ad730f467519a09d994524604e9de0612"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#ad730f467519a09d994524604e9de0612">send_char_from_int</a> (void *msg, size_t size)</td></tr>
-<tr class="memdesc:ad730f467519a09d994524604e9de0612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates through the bytes of a generic message and prints them in hex.  <br /></td></tr>
-<tr class="separator:ad730f467519a09d994524604e9de0612"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6d37a84104919cd7e027c2704a42db6" id="r_ab6d37a84104919cd7e027c2704a42db6"><td class="memItemLeft" align="right" valign="top">long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#ab6d37a84104919cd7e027c2704a42db6">config_address</a> (unsigned short address)</td></tr>
-<tr class="memdesc:ab6d37a84104919cd7e027c2704a42db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure address of the device to {address}.  <br /></td></tr>
-<tr class="separator:ab6d37a84104919cd7e027c2704a42db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c505274d25b0ccbe3c50b902545d2d8" id="r_a8c505274d25b0ccbe3c50b902545d2d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#a8c505274d25b0ccbe3c50b902545d2d8">config_DataRate</a> (int uart, int air)</td></tr>
-<tr class="memdesc:a8c505274d25b0ccbe3c50b902545d2d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure Uart DataRate to defaut (9600)  <br /></td></tr>
-<tr class="separator:a8c505274d25b0ccbe3c50b902545d2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4a2b7440f4f0ea1d46373e91e9eac9f" id="r_ac4a2b7440f4f0ea1d46373e91e9eac9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#ac4a2b7440f4f0ea1d46373e91e9eac9f">setup_frequency</a> (int freq)</td></tr>
-<tr class="memdesc:ac4a2b7440f4f0ea1d46373e91e9eac9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure module frequency.  <br /></td></tr>
-<tr class="separator:ac4a2b7440f4f0ea1d46373e91e9eac9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85db06d6b0d8c8973513f6db7fc2a5dd" id="r_a85db06d6b0d8c8973513f6db7fc2a5dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#a85db06d6b0d8c8973513f6db7fc2a5dd">setup_power</a> (int power)</td></tr>
-<tr class="memdesc:a85db06d6b0d8c8973513f6db7fc2a5dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure power.  <br /></td></tr>
-<tr class="separator:a85db06d6b0d8c8973513f6db7fc2a5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a989560dc4985f23d099ea5b32f6b2fbb" id="r_a989560dc4985f23d099ea5b32f6b2fbb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#a989560dc4985f23d099ea5b32f6b2fbb">set_mode</a> (int handle, int mode)</td></tr>
-<tr class="memdesc:a989560dc4985f23d099ea5b32f6b2fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the fonction mode of the module  <br /></td></tr>
-<tr class="separator:a989560dc4985f23d099ea5b32f6b2fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34fd4893c6a9bc91ead9338f52316d2a" id="r_a34fd4893c6a9bc91ead9338f52316d2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#a34fd4893c6a9bc91ead9338f52316d2a">send_msg_LoRa</a> (uint16_t address, uint8_t channel, char *msg, uint8_t msg_size)</td></tr>
-<tr class="memdesc:a34fd4893c6a9bc91ead9338f52316d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to a specific LoRa module using Fixed Transmission mode.  <br /></td></tr>
-<tr class="separator:a34fd4893c6a9bc91ead9338f52316d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a07bd5454bd46ce132cd97f4e928f02" id="r_a7a07bd5454bd46ce132cd97f4e928f02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#a7a07bd5454bd46ce132cd97f4e928f02">config_LoRa</a> (int handle, unsigned short address, <a class="el" href="LoRa_8h.html#a5f48a9b9cc9f3f1ce22f052974033dcd">LoRa_baudrate_t</a> baudrate, <a class="el" href="LoRa_8h.html#a27056a67ee03ba15ce23d15269739b8c">LoRa_datarate_t</a> datarate, int freq, <a class="el" href="LoRa_8h.html#a6b7211c14ee5a0d7a3786a4462f78a55">LoRa_power_t</a> power)</td></tr>
+<tr class="memdesc:a7a07bd5454bd46ce132cd97f4e928f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the LoRa module.  <br /></td></tr>
+<tr class="separator:a7a07bd5454bd46ce132cd97f4e928f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981a70b3be461b7806aaa0eed708fe96" id="r_a981a70b3be461b7806aaa0eed708fe96"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#a981a70b3be461b7806aaa0eed708fe96">send_msg_LoRa</a> (int handle, uint16_t address, uint8_t channel, char *msg, uint8_t msg_size)</td></tr>
+<tr class="memdesc:a981a70b3be461b7806aaa0eed708fe96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to a specific LoRa module using Fixed Transmission mode.  <br /></td></tr>
+<tr class="separator:a981a70b3be461b7806aaa0eed708fe96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple LoRa Library for the E220-900T22D LoRa module. </p>
 <dl class="section author"><dt>Author</dt><dd>Martin Calamel </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>22/04/2026 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ab6d37a84104919cd7e027c2704a42db6" name="ab6d37a84104919cd7e027c2704a42db6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6d37a84104919cd7e027c2704a42db6">&#9670;&#160;</a></span>config_address()</h2>
+<a id="a7a07bd5454bd46ce132cd97f4e928f02" name="a7a07bd5454bd46ce132cd97f4e928f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a07bd5454bd46ce132cd97f4e928f02">&#9670;&#160;</a></span>config_LoRa()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long int config_address </td>
+          <td class="memname">void config_LoRa </td>
           <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">unsigned short&#160;</td>
-          <td class="paramname"><em>address</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"><em>address</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Configure address of the device to {address}. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">address</td><td>: unsigned short =&gt; the address you want for the device </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>msg : long int =&gt; the msg to send to the device to setup the address </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>0xC0 : commande to set register </dd>
-<dd>
-0x00 : starting address of the register </dd>
-<dd>
-0x02 : length of the parameter </dd></dl>
-
-</div>
-</div>
-<a id="a8c505274d25b0ccbe3c50b902545d2d8" name="a8c505274d25b0ccbe3c50b902545d2d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c505274d25b0ccbe3c50b902545d2d8">&#9670;&#160;</a></span>config_DataRate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">int config_DataRate </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>uart</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="LoRa_8h.html#a5f48a9b9cc9f3f1ce22f052974033dcd">LoRa_baudrate_t</a>&#160;</td>
+          <td class="paramname"><em>baudrate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="LoRa_8h.html#a27056a67ee03ba15ce23d15269739b8c">LoRa_datarate_t</a>&#160;</td>
+          <td class="paramname"><em>datarate</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>air</em>&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="LoRa_8h.html#a6b7211c14ee5a0d7a3786a4462f78a55">LoRa_power_t</a>&#160;</td>
+          <td class="paramname"><em>power</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -203,73 +178,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configure Uart DataRate to defaut (9600) </p>
+<p>Configure the LoRa module. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uart</td><td>: int =&gt; code for the correct baudrate 000 -&gt; 111 </td></tr>
-    <tr><td class="paramname">air</td><td>: int =&gt; code for the correct data rate 000 -&gt; 111 </td></tr>
+    <tr><td class="paramname">handle</td><td>: int =&gt; process with the gpio </td></tr>
+    <tr><td class="paramname">address</td><td>: unsigned short =&gt; Address of the module </td></tr>
+    <tr><td class="paramname">baudrate</td><td>: LoRa_baudrate_t =&gt; Desired BaudRate </td></tr>
+    <tr><td class="paramname">datarate</td><td>: LoRa_datarate_t =&gt; Desired DataRate </td></tr>
+    <tr><td class="paramname">freq</td><td>: int =&gt; frequency of the module [0-80] </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>msg : int =&gt; the msg to send to the device to setup DataRate </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>0xC0 : commande to set register </dd>
-<dd>
-0x02 : starting address of the register </dd>
-<dd>
-0x01 : length of the parameter </dd>
-<dd>
-0x?? : data as follow : </dd>
-<dd>
-|&mdash;Uart rate [7,6,5] =&gt; 011 = 9600 (default) </dd>
-<dd>
-|&mdash;Serial parity bit [4,3] =&gt; 00 = 8N1 (default) </dd>
-<dd>
-|&mdash;Air DataRate [2,1,0] =&gt; 111 : 62.5k (Max) </dd>
-<dd>
-For more details look doc p14-15 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 if all right </dd></dl>
 
 </div>
 </div>
-<a id="ad730f467519a09d994524604e9de0612" name="ad730f467519a09d994524604e9de0612"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad730f467519a09d994524604e9de0612">&#9670;&#160;</a></span>send_char_from_int()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int send_char_from_int </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>msg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Iterates through the bytes of a generic message and prints them in hex. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">msg</td><td>: void * =&gt; pointer to the data to print </td></tr>
-    <tr><td class="paramname">size</td><td>: size_t =&gt; size of the data in bytes </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if all went right </dd></dl>
-
-</div>
-</div>
-<a id="a34fd4893c6a9bc91ead9338f52316d2a" name="a34fd4893c6a9bc91ead9338f52316d2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34fd4893c6a9bc91ead9338f52316d2a">&#9670;&#160;</a></span>send_msg_LoRa()</h2>
+<a id="a981a70b3be461b7806aaa0eed708fe96" name="a981a70b3be461b7806aaa0eed708fe96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a981a70b3be461b7806aaa0eed708fe96">&#9670;&#160;</a></span>send_msg_LoRa()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,6 +202,12 @@ For more details look doc p14-15 </dd></dl>
         <tr>
           <td class="memname">int send_msg_LoRa </td>
           <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>address</em>, </td>
         </tr>
@@ -310,8 +241,9 @@ For more details look doc p14-15 </dd></dl>
 <ul>
 <li>According to Section 5.1 of the manual, in fixed transmission mode, the first three bytes of the UART data are used as the target address and channel. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">handle</td><td>process for the pin. </td></tr>
     <tr><td class="paramname">address</td><td>Target module address (ADDH and ADDL), from 0 to 65535. </td></tr>
-    <tr><td class="paramname">channel</td><td>Target frequency channel (0 to 83). </td></tr>
+    <tr><td class="paramname">channel</td><td>Target frequency channel (0 to 80). </td></tr>
     <tr><td class="paramname">msg</td><td>Pointer to the data payload to be sent. </td></tr>
     <tr><td class="paramname">msg_size</td><td>Size of the payload (Max 200 bytes per packet by default). </td></tr>
   </table>
@@ -320,112 +252,6 @@ For more details look doc p14-15 </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>int 0 on success. </dd></dl>
 </li>
 </ul>
-
-</div>
-</div>
-<a id="a989560dc4985f23d099ea5b32f6b2fbb" name="a989560dc4985f23d099ea5b32f6b2fbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a989560dc4985f23d099ea5b32f6b2fbb">&#9670;&#160;</a></span>set_mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int set_mode </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>set the fonction mode of the module </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">handle</td><td>: int =&gt; process with the gpio </td></tr>
-    <tr><td class="paramname">mode</td><td>: int =&gt; mode you want to set (0-&gt;config, 1-&gt;transmit) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if ok </dd></dl>
-
-</div>
-</div>
-<a id="ac4a2b7440f4f0ea1d46373e91e9eac9f" name="ac4a2b7440f4f0ea1d46373e91e9eac9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4a2b7440f4f0ea1d46373e91e9eac9f">&#9670;&#160;</a></span>setup_frequency()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int setup_frequency </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>freq</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Configure module frequency. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">freq</td><td>: int =&gt; frequency you want to setup (850 MHz - 930 MHz) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>msg : int =&gt; the msg to send to the device to setup frequency </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>0xC0 : commande to set register </dd>
-<dd>
-0x04 : starting address of the register </dd>
-<dd>
-0x01 : length of the parameter </dd>
-<dd>
-data as follow (0-80): freq - 850 </dd></dl>
-
-</div>
-</div>
-<a id="a85db06d6b0d8c8973513f6db7fc2a5dd" name="a85db06d6b0d8c8973513f6db7fc2a5dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85db06d6b0d8c8973513f6db7fc2a5dd">&#9670;&#160;</a></span>setup_power()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int setup_power </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>power</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Configure power. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">power</td><td>: int =&gt; code for the correct baudrate 00 -&gt; 11 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>msg : int =&gt; the msg to send to the device to setup power </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>0xC0 : commande to set register </dd>
-<dd>
-0x03 : starting address of the register </dd>
-<dd>
-0x01 : length of the parameter </dd>
-<dd>
-power data </dd></dl>
 
 </div>
 </div>

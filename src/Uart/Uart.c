@@ -9,14 +9,18 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+#include "src/Uart/Uart.h"
+
+static char *UART_PATH = "/dev/ttyS0";
+
 /**
  * @brief Open the serial port file to be able to send or receive data.
  * 
- * @return {serial_port} : int => id of the file (use for read and write function)
+ * @return serial_port : int => id of the file (use for read and write function)
  * @note open the /dev/ttyS0 file (usually the serial 0 file)
  */
-int open_serial(){
-    int serial_port = open("/dev/ttyS0", O_RDWR);
+static int open_serial(){
+    int serial_port = open(UART_PATH, O_RDWR);
     // change the path if you want to change the Serial port
     return serial_port;
 }
@@ -41,28 +45,17 @@ int send_msg_uart(unsigned char *msg, int size){
 
 /**
  * @brief receive message over uart
+ * @param buffer        : char *=> data buffer for UART reading
  * @param buffer_size   : int   => size of the buffer for reading
  * @note open the serial file,
- * @note prepare the buffer,
- * @note read the buffer with the right size,
+ * @note put data on buffer with the right size,
  * @note close the serial file,
- * @note display the data.
  */
-int recv_msg_uart(int buffer_size){
+int recv_msg_uart(char *buffer, int buffer_size){
     int serial_port = open_serial();
 
-    char read_buffer[buffer_size];
-    int bytes_read = 0;
-
-    bytes_read = read(serial_port, &read_buffer, buffer_size);
-
+    read(serial_port, &buffer, buffer_size);
     close(serial_port);
-
-    printf("UART msg recv...\n");
-    printf("Bytes read : %i\n", bytes_read);
-    printf("\nContent : \n");
-
-    for(int i=0; i<bytes_read;i++){printf("%c",read_buffer[i]);}
 
     return 0;
 }

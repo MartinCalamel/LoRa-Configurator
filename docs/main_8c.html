@@ -85,6 +85,8 @@ $(function() {
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;termios.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &lt;lgpio.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="Uart_8h_source.html">src/Uart/Uart.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="LoRa_8h_source.html">src/LoRa/LoRa.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -92,25 +94,29 @@ Include dependency graph for main.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c__incl.png" border="0" usemap="#amain_8c" alt=""/></div>
 <map name="amain_8c" id="amain_8c">
-<area shape="rect" title="main program of the LoRa configurator" alt="" coords="339,5,405,31"/>
+<area shape="rect" title="main program of the LoRa configurator" alt="" coords="441,5,508,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,72,104"/>
-<area shape="poly" title=" " alt="" coords="339,29,86,81,86,81,84,76,85,76,338,23"/>
+<area shape="poly" title=" " alt="" coords="442,26,287,47,86,81,85,81,84,76,85,76,287,42,441,21"/>
 <area shape="rect" title=" " alt="" coords="97,79,167,104"/>
-<area shape="poly" title=" " alt="" coords="339,32,181,78,180,73,338,27"/>
+<area shape="poly" title=" " alt="" coords="442,28,181,81,180,76,440,23"/>
 <area shape="rect" title=" " alt="" coords="191,79,262,104"/>
-<area shape="poly" title=" " alt="" coords="350,33,264,75,261,70,347,28"/>
+<area shape="poly" title=" " alt="" coords="442,31,276,79,275,74,440,26"/>
 <area shape="rect" title=" " alt="" coords="286,79,357,104"/>
-<area shape="poly" title=" " alt="" coords="366,33,340,69,335,66,361,29"/>
+<area shape="poly" title=" " alt="" coords="451,33,360,75,358,70,449,28"/>
 <area shape="rect" title=" " alt="" coords="381,79,465,104"/>
-<area shape="poly" title=" " alt="" coords="383,29,409,66,404,69,378,33"/>
+<area shape="poly" title=" " alt="" coords="468,33,441,69,437,66,464,29"/>
 <area shape="rect" title=" " alt="" coords="489,79,564,104"/>
-<area shape="poly" title=" " alt="" coords="398,28,490,70,488,75,396,33"/>
-<area shape="rect" href="Uart_8h.html" title="Simple UART library for Raspberry Pi 4 board." alt="" coords="588,79,705,104"/>
-<area shape="poly" title=" " alt="" coords="406,25,590,73,588,78,405,31"/>
-<area shape="rect" href="LoRa_8h.html" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="729,79,855,104"/>
-<area shape="poly" title=" " alt="" coords="406,22,716,75,715,80,405,28"/>
-<area shape="rect" title=" " alt="" coords="755,152,829,177"/>
-<area shape="poly" title=" " alt="" coords="795,104,795,138,789,138,789,104"/>
+<area shape="poly" title=" " alt="" coords="485,29,512,66,508,69,481,33"/>
+<area shape="rect" title=" " alt="" coords="589,79,651,104"/>
+<area shape="poly" title=" " alt="" coords="499,28,585,70,583,75,497,33"/>
+<area shape="rect" title=" " alt="" coords="676,79,743,104"/>
+<area shape="poly" title=" " alt="" coords="509,27,664,73,662,79,508,32"/>
+<area shape="rect" href="Uart_8h.html" title="Simple UART library for Raspberry Pi 4 board." alt="" coords="767,79,884,104"/>
+<area shape="poly" title=" " alt="" coords="509,23,756,73,755,79,508,29"/>
+<area shape="rect" href="LoRa_8h.html" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="908,79,1033,104"/>
+<area shape="poly" title=" " alt="" coords="508,21,895,76,894,81,508,27"/>
+<area shape="rect" title=" " alt="" coords="933,152,1008,177"/>
+<area shape="poly" title=" " alt="" coords="973,104,973,138,968,138,968,104"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -142,14 +148,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getch_linux</b> ()</td
 <tr class="memitem:a3f0beeb2af1a218bdab70091bd979f64" id="r_a3f0beeb2af1a218bdab70091bd979f64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a3f0beeb2af1a218bdab70091bd979f64">int_to_bytes</a> (uint64_t val, uint8_t *dest, int nb_bytes)</td></tr>
 <tr class="memdesc:a3f0beeb2af1a218bdab70091bd979f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">change int to bytes for transmission  <br /></td></tr>
 <tr class="separator:a3f0beeb2af1a218bdab70091bd979f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afacb602e4f3bfe119bc6136d5701feeb" id="r_afacb602e4f3bfe119bc6136d5701feeb"><td class="memItemLeft" align="right" valign="top"><a id="afacb602e4f3bfe119bc6136d5701feeb" name="afacb602e4f3bfe119bc6136d5701feeb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>configure_LoRa_module</b> ()</td></tr>
-<tr class="memdesc:afacb602e4f3bfe119bc6136d5701feeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">base on the index get the value for the params and send it over uart <br /></td></tr>
-<tr class="separator:afacb602e4f3bfe119bc6136d5701feeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d5653fd04586781400b642d58f8752e" id="r_a6d5653fd04586781400b642d58f8752e"><td class="memItemLeft" align="right" valign="top"><a id="a6d5653fd04586781400b642d58f8752e" name="a6d5653fd04586781400b642d58f8752e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setup_address</b> ()</td></tr>
 <tr class="memdesc:a6d5653fd04586781400b642d58f8752e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask the user the address of the module and send it over uart. <br /></td></tr>
 <tr class="separator:a6d5653fd04586781400b642d58f8752e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afacb602e4f3bfe119bc6136d5701feeb" id="r_afacb602e4f3bfe119bc6136d5701feeb"><td class="memItemLeft" align="right" valign="top"><a id="afacb602e4f3bfe119bc6136d5701feeb" name="afacb602e4f3bfe119bc6136d5701feeb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>configure_LoRa_module</b> ()</td></tr>
+<tr class="memdesc:afacb602e4f3bfe119bc6136d5701feeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">base on the index get the value for the params and send it over uart <br /></td></tr>
+<tr class="separator:afacb602e4f3bfe119bc6136d5701feeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35a90bdf2e6e7a8f92e3f8a246843500" id="r_a35a90bdf2e6e7a8f92e3f8a246843500"><td class="memItemLeft" align="right" valign="top"><a id="a35a90bdf2e6e7a8f92e3f8a246843500" name="a35a90bdf2e6e7a8f92e3f8a246843500"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>starting_menu</b> ()</td></tr>
 <tr class="memdesc:a35a90bdf2e6e7a8f92e3f8a246843500"><td class="mdescLeft">&#160;</td><td class="mdescRight">display the menu and do the configuration <br /></td></tr>
@@ -187,6 +193,12 @@ short&#160;</td><td class="memItemRight" valign="bottom"><b>d</b> = 7</td></tr>
 <tr class="memitem:a22a406ea2440c8e23ec3fd768f8813a7" id="r_a22a406ea2440c8e23ec3fd768f8813a7"><td class="memItemLeft" align="right" valign="top"><a id="a22a406ea2440c8e23ec3fd768f8813a7" name="a22a406ea2440c8e23ec3fd768f8813a7"></a>
 short&#160;</td><td class="memItemRight" valign="bottom"><b>p</b> = 2</td></tr>
 <tr class="separator:a22a406ea2440c8e23ec3fd768f8813a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2d98bb0b152ca3d254d1c534236c2e6" id="r_af2d98bb0b152ca3d254d1c534236c2e6"><td class="memItemLeft" align="right" valign="top"><a id="af2d98bb0b152ca3d254d1c534236c2e6" name="af2d98bb0b152ca3d254d1c534236c2e6"></a>
+unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>addr</b> = 0x0001</td></tr>
+<tr class="separator:af2d98bb0b152ca3d254d1c534236c2e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3127ebf018e9da62fa464d348352037d" id="r_a3127ebf018e9da62fa464d348352037d"><td class="memItemLeft" align="right" valign="top"><a id="a3127ebf018e9da62fa464d348352037d" name="a3127ebf018e9da62fa464d348352037d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b></td></tr>
+<tr class="separator:a3127ebf018e9da62fa464d348352037d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>main program of the LoRa configurator </p>

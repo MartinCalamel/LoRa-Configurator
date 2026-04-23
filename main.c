@@ -11,6 +11,8 @@
 #include <stdint.h>
 #include <termios.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <lgpio.h>
 
 #include "src/Uart/Uart.h"
 #include "src/LoRa/LoRa.h"
@@ -36,6 +38,8 @@ short b = 3;
 short f = 0;
 short d = 7;
 short p = 2;
+unsigned short addr = 0x0001;
+int handle;
 
 /**
  * @brief detect key press without waiting for ENTER
@@ -215,38 +219,11 @@ void int_to_bytes(uint64_t val, uint8_t *dest, int nb_bytes) {
 }
 
 /**
- * @brief base on the index get the value for the params and send it over uart
- */
-void configure_LoRa_module(){
-    printf("\n\n-----------------------------\n");
-    printf("Message sent via UART...\n");
-    unsigned char buffer[6];
-
-    int rate_config = config_DataRate(b, d);
-    int_to_bytes(rate_config, buffer, 4);
-    printf("    1.  0x%x\n", rate_config);
-    send_msg_uart(buffer, 4);
-
-    int freq_config = setup_frequency(f);
-    int_to_bytes(freq_config, buffer, 4);
-    printf("    2.  0x%x\n", freq_config);
-    send_msg_uart(buffer, 4);
-
-    int power_config = setup_power(p);
-    int_to_bytes(power_config, buffer, 4);
-    printf("    3.  0x%x\n", power_config);
-    send_msg_uart(buffer, 4);
-
-    printf("-----------------------------\n");
-}
-
-/**
  * @brief Ask the user the address of the module and send it over uart
  */
 void setup_address(){
     char address[6];
-    unsigned char buffer[6];
-    printf("Setup module's address [XXXX]: ");
+    printf("Setup module's address hex [0000-FFFF]: ");
     if (fgets(address, sizeof(address), stdin)) {
             // Supprimer le caractère de nouvelle ligne '\n' capturé par fgets
             address[strcspn(address, "\n")] = 0;
@@ -261,13 +238,15 @@ void setup_address(){
             address_int += ((int)(address[i]-55)<<(4*(3-i)));
         }
     }
-    printf("\n\n-----------------------------\n");
-    printf("Message sent via UART...\n");
-    long int addr_config = config_address((unsigned short)address_int);
-    int_to_bytes(addr_config, buffer, 5);
-    printf("    1.  0x%lx\n", addr_config);
-    send_msg_uart(buffer, 5);
-    printf("-----------------------------\n");
+    addr = (unsigned short)address_int;
+}
+
+/**
+ * @brief base on the index get the value for the params and send it over uart
+ */
+void configure_LoRa_module(){
+    setup_address();
+    config_LoRa(handle, addr, b, d, f, p);
 }
 
 /**
@@ -297,16 +276,33 @@ void starting_menu(){
         }
     }
     configure_LoRa_module();
-    setup_address();
 }
 
 int main() {
-    int handle = lgGpiochipOpen(0);
+    handle = lgGpiochipOpen(0);
     init_frequences();
-    set_mode(handle, 0);
     starting_menu();
-    lgGpiochipClose(handle);
-    set_mode(handle, 1);
+
+    int run = 1;
+    pid_t p;
+    p = fork();
+    if (p<0){
+        printf("[ERROR] fork fail\n");// process error
+    } else if (p == 0){
+        // parent process for reading UART
+        while (run){
+            printf("Waiting for data\n");
+            sleep(5);
+            printf("hey");
+            char buffer[64];
+            recv_msg_uart(buffer, 64);
+            printf("%s", buffer);
+        }
+    }else{
+        //chile process for writing UART
+        char msg[] = "hello";
+        send_msg_LoRa(handle, 0x1234, 10, msg, sizeof(msg));
+    }
     // printf("Starting LoRa + UART System...\n\n");
 
     // // 1. Generate LoRa Configuration Messages
@@ -328,4 +324,6 @@ int main() {
     // recv_msg_uart(64);
 
     // return 0;
+    lgGpiochipClose(handle);
+    return 0;
 }
