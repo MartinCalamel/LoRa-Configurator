@@ -80,7 +80,41 @@ installation</h1>
 <div class="line">cd LoRa-Configurator</div>
 <div class="line">make</div>
 <div class="line">./build/main</div>
-</div><!-- fragment --><p> make sure the device is connected on the UART0 (<code>/dev/ttyS0</code>) </p>
+</div><!-- fragment --><p> **⚠️make sure the device is connected on the UART0 (<code>/dev/ttyS0</code>)⚠️**</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Usage</h1>
+<p>To run the module : </p><div class="fragment"><div class="line">./build/main</div>
+</div><!-- fragment --><p> You arrived in a cli menu where you can navigate by answering question, using arrow (up and down) and ENTER to validate. </p><div class="fragment"><div class="line">      @@@@@@@@@@@@@@@@@@@@@@@@@@      ____       _     ____</div>
+<div class="line">   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     / ___|_ __ (_)   / ___| _ __   __ _  ___ ___</div>
+<div class="line">  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    | |   | &#39;_ \| |____\___ \| &#39;_ \ / _` |/ __/ _ \</div>
+<div class="line"> @@@      @@@@      @@@@            | |___| |_) | |_____|__) | |_) | (_| | (_|  __/</div>
+<div class="line">@@@       @@@      @@@@@             \____| .__/|_|    |____/| .__/ \__,_|\___\___|</div>
+<div class="line">         @@@@      @@@@@                  |_|                |_|</div>
+<div class="line">         @@@@      @@@@@</div>
+<div class="line">         @@@@      @@@@@                           Module : E220-900T22D</div>
+<div class="line">         @@@@      @@@@@                          Autor  : Martin CALAMEL</div>
+<div class="line">        @@@@@     @@@@@@</div>
+<div class="line">       @@@@@      @@@@@@</div>
+<div class="line">      @@@@@@      @@@@@@             Default Specs:</div>
+<div class="line">     @@@@@@@      @@@@@@      @@       [ ] |   BaudRate    |  9600           |</div>
+<div class="line">    @@@@@@@       @@@@@@@    @@@       [ ] |   Frequency   |  850.125 MHz    |</div>
+<div class="line">   @@@@@@@@       @@@@@@@@@@@@@        [ ] |   DataRate    |  62,5Kbps       |</div>
+<div class="line">   @@@@@@@         @@@@@@@@@@@         [ ] |     Power     |  13dBm          |</div>
+<div class="line">    @@@@@            @@@@@@@</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">Keep those Value ? [yes/no]:</div>
+</div><!-- fragment --><p> You can choose the specs you want. <br  />
+ Once you select all the spec you want, you can validate by entering anything but <code>no</code>. <br  />
+ After that the programme send all the config to the LoRa module via the UART.</p>
+<p><b>⚠️Make sure that if you change the BaudRate, you also change the BaudRate of your device⚠️</b>. <br  />
+</p>
+<p>You need now to setup the device's address. <br  />
+ It must be a 4 digit hexadecimal address such as <code>1234</code> who will be understand as <code>0x1234</code>.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Doc</h1>
+<p>Here you can access to the module documentation <a href="https://www.cdebyte.com/pdf-down.aspx?id=1136">ebyte doc</a> <br  />
+ Here you can access to the library documentation <a href="https://martincalamel.github.io/LoRa-Configurator/index.html">LoRa-Configurator</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
