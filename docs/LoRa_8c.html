@@ -84,20 +84,26 @@ $(function() {
 <p>Simple LoRa Library for the E220-900T22D LoRa module.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="gpio__utils_8h_source.html">gpio/gpio_utils.h</a>&quot;</code><br />
 <code>#include &lt;lgpio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="gpio__utils_8h_source.html">gpio/gpio_utils.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LoRa.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="LoRa_8c__incl.png" border="0" usemap="#aLoRa_2LoRa_8c" alt=""/></div>
 <map name="aLoRa_2LoRa_8c" id="aLoRa_2LoRa_8c">
-<area shape="rect" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="111,5,212,31"/>
+<area shape="rect" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="172,5,273,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,72,104"/>
-<area shape="poly" title=" " alt="" coords="143,33,72,74,69,69,140,28"/>
-<area shape="rect" href="gpio__utils_8h.html" title="Simple GPIO helper library for Raspberry Pi 4 (lgpio backend)" alt="" coords="97,79,226,104"/>
-<area shape="poly" title=" " alt="" coords="164,31,164,65,159,65,159,31"/>
-<area shape="rect" title=" " alt="" coords="251,79,317,104"/>
-<area shape="poly" title=" " alt="" coords="182,28,254,69,251,74,180,33"/>
+<area shape="poly" title=" " alt="" coords="194,33,83,76,81,71,192,28"/>
+<area shape="rect" title=" " alt="" coords="96,79,163,104"/>
+<area shape="poly" title=" " alt="" coords="209,33,157,72,154,68,206,29"/>
+<area shape="rect" title=" " alt="" coords="187,79,258,104"/>
+<area shape="poly" title=" " alt="" coords="225,31,225,65,220,65,220,31"/>
+<area shape="rect" title=" " alt="" coords="282,79,353,104"/>
+<area shape="poly" title=" " alt="" coords="239,29,292,68,289,72,236,33"/>
+<area shape="rect" href="gpio__utils_8h.html" title="Simple GPIO helper library for Raspberry Pi 4 (lgpio backend)" alt="" coords="377,79,506,104"/>
+<area shape="poly" title=" " alt="" coords="259,28,394,72,392,77,257,33"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -130,6 +136,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a989560dc4985f23d099ea5b32f6b2fbb" id="r_a989560dc4985f23d099ea5b32f6b2fbb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#a989560dc4985f23d099ea5b32f6b2fbb">set_mode</a> (int handle, int mode)</td></tr>
 <tr class="memdesc:a989560dc4985f23d099ea5b32f6b2fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the fonction mode of the module  <br /></td></tr>
 <tr class="separator:a989560dc4985f23d099ea5b32f6b2fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34fd4893c6a9bc91ead9338f52316d2a" id="r_a34fd4893c6a9bc91ead9338f52316d2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LoRa_8c.html#a34fd4893c6a9bc91ead9338f52316d2a">send_msg_LoRa</a> (uint16_t address, uint8_t channel, char *msg, uint8_t msg_size)</td></tr>
+<tr class="memdesc:a34fd4893c6a9bc91ead9338f52316d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to a specific LoRa module using Fixed Transmission mode.  <br /></td></tr>
+<tr class="separator:a34fd4893c6a9bc91ead9338f52316d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple LoRa Library for the E220-900T22D LoRa module. </p>
@@ -256,6 +265,61 @@ For more details look doc p14-15 </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if all went right </dd></dl>
+
+</div>
+</div>
+<a id="a34fd4893c6a9bc91ead9338f52316d2a" name="a34fd4893c6a9bc91ead9338f52316d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34fd4893c6a9bc91ead9338f52316d2a">&#9670;&#160;</a></span>send_msg_LoRa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int send_msg_LoRa </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>msg_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends a message to a specific LoRa module using Fixed Transmission mode. </p>
+<ul>
+<li>According to Section 5.1 of the manual, in fixed transmission mode, the first three bytes of the UART data are used as the target address and channel. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>Target module address (ADDH and ADDL), from 0 to 65535. </td></tr>
+    <tr><td class="paramname">channel</td><td>Target frequency channel (0 to 83). </td></tr>
+    <tr><td class="paramname">msg</td><td>Pointer to the data payload to be sent. </td></tr>
+    <tr><td class="paramname">msg_size</td><td>Size of the payload (Max 200 bytes per packet by default). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 on success. </dd></dl>
+</li>
+</ul>
 
 </div>
 </div>

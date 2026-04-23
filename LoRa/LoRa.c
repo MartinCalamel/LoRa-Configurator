@@ -6,13 +6,15 @@
  */
 
 #include <stdio.h>
-#include "gpio/gpio_utils.h"
 #include <lgpio.h>
+#include <stdint.h>
+#include <string.h>
+
+#include "gpio/gpio_utils.h"
+
 
 #define M0 17
 #define M1 27
-#include <stdint.h>
-#include <string.h>
 
 int send_char_from_int(void *msg, size_t size){
     unsigned char *p = (unsigned char *)msg;
