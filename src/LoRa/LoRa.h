@@ -70,7 +70,7 @@ typedef enum LoRa_power{
  * @param freq      : int               => frequency of the module [0-80]
  * @return int 0 if all right
  */
-int config_LoRa(int handle, unsigned short address, LoRa_baudrate_t baudrate, LoRa_datarate_t datarate, int freq, LoRa_power_t);
+void config_LoRa(int handle, unsigned short address, LoRa_baudrate_t baudrate, LoRa_datarate_t datarate, int freq, LoRa_power_t power);
 
 /**
  * @brief Sends a message to a specific LoRa module using Fixed Transmission mode.

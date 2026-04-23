@@ -110,7 +110,7 @@ static void set_mode(int handle, LoRa_mode_t mode){
  * @param freq      : int               => frequency of the module [0-80]
  * @return int 0 if all right
  */
-void config_LoRa(int handle, unsigned short address, LoRa_baudrate_t baudrate, LoRa_datarate_t datarate, int freq, LoRa_power_t){
+void config_LoRa(int handle, unsigned short address, LoRa_baudrate_t baudrate, LoRa_datarate_t datarate, int freq, LoRa_power_t power){
     set_mode(handle, LORA_MODE_CONFIG);
 
     long int set_address_cmd = set_address(address);
