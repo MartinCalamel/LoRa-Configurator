@@ -53,9 +53,8 @@ int send_msg_uart(unsigned char *msg, int size){
  */
 int recv_msg_uart(char *buffer, int buffer_size){
     int serial_port = open_serial();
-    int bytes_read;
 
-    bytes_read = read(serial_port, &buffer, buffer_size);
+    read(serial_port, &buffer, buffer_size);
     close(serial_port);
 
     return 0;

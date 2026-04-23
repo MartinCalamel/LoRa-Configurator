@@ -301,7 +301,7 @@ int main() {
     }else{
         //chile process for writing UART
         char msg[] = "hello";
-        send_msg_LoRa(0x1234, 10, msg, sizeof(msg));
+        send_msg_LoRa(handle, 0x1234, 10, msg, sizeof(msg));
     }
     // printf("Starting LoRa + UART System...\n\n");
 
