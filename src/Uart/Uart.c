@@ -9,7 +9,9 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-static char *UART_PATH = "/dev/ttyS0"
+#include "src/Uart/Uart.h"
+
+static char *UART_PATH = "/dev/ttyS0";
 
 /**
  * @brief Open the serial port file to be able to send or receive data.
