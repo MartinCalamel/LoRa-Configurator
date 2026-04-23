@@ -1,5 +1,9 @@
 <map id="src/Uart/Uart.h" name="src/Uart/Uart.h">
-<area shape="rect" id="Node000001" title="Simple UART library for Raspberry Pi 4 board." alt="" coords="5,5,123,31"/>
-<area shape="rect" id="Node000002" href="$main_8c.html" title="main program of the LoRa configurator" alt="" coords="31,79,97,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,44,67,79,61,79,61,44"/>
+<area shape="rect" id="Node000001" title="Simple UART library for Raspberry Pi 4 board." alt="" coords="100,5,217,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title="main program of the LoRa configurator" alt="" coords="5,79,72,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,40,60,81,57,76,126,35"/>
+<area shape="rect" id="Node000003" href="$LoRa_8c.html" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="97,79,221,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,44,161,79,156,79,156,44"/>
+<area shape="rect" id="Node000004" href="$Uart_8c.html" title="Implementation of uart_utils — simple uart send en recv." alt="" coords="245,79,361,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,34,280,76,278,81,193,39"/>
 </map>

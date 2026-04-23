@@ -1,5 +1,7 @@
 <map id="src/LoRa/LoRa.h" name="src/LoRa/LoRa.h">
-<area shape="rect" id="Node000001" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="5,5,131,31"/>
-<area shape="rect" id="Node000002" href="$main_8c.html" title="main program of the LoRa configurator" alt="" coords="35,79,101,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,44,71,79,65,79,65,44"/>
+<area shape="rect" id="Node000001" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="36,5,161,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title="main program of the LoRa configurator" alt="" coords="5,79,72,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,43,50,80,46,77,78,40"/>
+<area shape="rect" id="Node000003" href="$LoRa_8c.html" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="97,79,221,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,40,151,77,147,80,115,43"/>
 </map>
