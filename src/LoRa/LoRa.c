@@ -10,7 +10,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "gpio/gpio_utils.h"
+#include "src/gpio/gpio_utils.h"
 
 
 #define M0 17

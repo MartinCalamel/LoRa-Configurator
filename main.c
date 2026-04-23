@@ -12,8 +12,8 @@
 #include <termios.h>
 #include <unistd.h>
 
-#include "Uart/Uart.h"
-#include "LoRa/LoRa.h"
+#include "src/Uart/Uart.h"
+#include "src/LoRa/LoRa.h"
 
 char opts_freq[81][20]; // Global
 

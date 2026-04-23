@@ -1,5 +1,5 @@
-<map id="Uart/Uart.c" name="Uart/Uart.c">
-<area shape="rect" id="Node000001" title="Implementation of uart_utils — simple uart send en recv." alt="" coords="87,5,180,31"/>
+<map id="src/Uart/Uart.c" name="src/Uart/Uart.c">
+<area shape="rect" id="Node000001" title="Implementation of uart_utils — simple uart send en recv." alt="" coords="75,5,191,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,72,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,33,67,72,64,68,117,29"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="96,79,171,104"/>
