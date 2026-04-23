@@ -6,8 +6,12 @@
  */
 
 #include <stdio.h>
-#include "gpio/gpio_utils.h"
 #include <lgpio.h>
+#include <stdint.h>
+#include <string.h>
+
+#include "gpio/gpio_utils.h"
+
 
 #define M0 17
 #define M1 27
@@ -103,7 +107,31 @@ int set_mode(int handle, int mode){
 }
 
 
+/**
+ * @brief Sends a message to a specific LoRa module using Fixed Transmission mode.
+ * * According to Section 5.1 of the manual, in fixed transmission mode, the first 
+ * three bytes of the UART data are used as the target address and channel.
+ * @param address   Target module address (ADDH and ADDL), from 0 to 65535.
+ * @param channel   Target frequency channel (0 to 83).
+ * @param msg       Pointer to the data payload to be sent.
+ * @param msg_size  Size of the payload (Max 200 bytes per packet by default).
+ * @return int      0 on success.
+ */
+int send_msg_LoRa(uint16_t address, uint8_t channel, char *msg, uint8_t msg_size) {
+    uint8_t total_size = 3 + msg_size;
+    uint8_t data_buffer[total_size];
 
+    data_buffer[0] = (uint8_t)(address >> 8);   // ADDH
+    data_buffer[1] = (uint8_t)(address & 0xFF);  // ADDL
+    
+    data_buffer[2] = channel;
+
+    memcpy(&data_buffer[3], msg, msg_size);
+
+    send_msg_uart(data_buffer, total_size);
+    
+    return 0;
+}
 
 // int main(){
 //     long int valeur = config_address(0x1234);
