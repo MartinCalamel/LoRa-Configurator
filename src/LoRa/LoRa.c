@@ -11,18 +11,11 @@
 #include <string.h>
 
 #include "src/gpio/gpio_utils.h"
+#include "src/Uart/Uart.h"
+#include "src/LoRa/LoRa.h"
 
-
-#define M0 17
-#define M1 27
-
-int send_char_from_int(void *msg, size_t size){
-    unsigned char *p = (unsigned char *)msg;
-    for (size_t i = size; i > 0; i--) {
-        printf("i=%li\n0x%02X\n", i-1, p[i-1]);
-    }
-    return 0;
-}
+static int M0 = 17;
+static int M1 = 27;
 
 /**
  * @brief Configure address of the device to {address}
@@ -32,7 +25,7 @@ int send_char_from_int(void *msg, size_t size){
  * @note 0x00 : starting address of the register
  * @note 0x02 : length of the parameter
  */
-long int config_address(unsigned short address) {
+static long int set_address(unsigned short address) {
     long int msg = 0xC000020000;
     msg |= address;    
     return msg;
@@ -52,7 +45,7 @@ long int config_address(unsigned short address) {
  * @note    |---Air DataRate [2,1,0] => 111 : 62.5k (Max)
  * @note For more details look doc p14-15
  */
-int config_DataRate(int uart, int air){
+static int set_DataRate(LoRa_baudrate_t uart, LoRa_datarate_t air){
     int data = 0;
     data += (uart<<5) + air;
     int msg = 0xC0020100;
@@ -69,7 +62,7 @@ int config_DataRate(int uart, int air){
  * @note 0x01 : length of the parameter
  * @note data as follow (0-80): freq - 850
  */
-int setup_frequency(int freq){
+static int set_frequency(int freq){
     int msg = 0xC0040100;
     msg |= freq;
     return msg;
@@ -84,7 +77,7 @@ int setup_frequency(int freq){
  * @note 0x01 : length of the parameter
  * @note power data
  */
-int setup_power(int power){
+static int set_power(LoRa_power_t power){
     int msg = 0xC0030100; 
     msg |= power;
     return msg;
@@ -96,7 +89,7 @@ int setup_power(int power){
  * @param mode      : int => mode you want to set (0->config, 1->transmit)
  * @return 0 if ok
  */
-int set_mode(int handle, int mode){
+static int set_mode(int handle, LoRa_mode_t mode){
     if (mode){
         up_gpio(handle, M0);
         up_gpio(handle, M1);
@@ -108,16 +101,45 @@ int set_mode(int handle, int mode){
 
 
 /**
+ * @brief Configure the LoRa module
+ * 
+ * @param handle    : int               => process with the gpio
+ * @param address   : unsigned short    => Address of the module 
+ * @param baudrate  : LoRa_baudrate_t   => Desired BaudRate
+ * @param datarate  : LoRa_datarate_t   => Desired DataRate
+ * @param freq      : int               => frequency of the module [0-80]
+ * @return int 0 if all right
+ */
+int config_LoRa(int handle, unsigned short address, LoRa_baudrate_t baudrate, LoRa_datarate_t datarate, int freq, LoRa_power_t){
+    set_mode(handle, CONFIG);
+
+    long int set_address_cmd = set_address(address);
+    send_msg_uart((char *)&set_address_cmd, sizeof(set_address_cmd));
+
+    int set_datarate_cmd = set_DataRate(baudrate, datarate);
+    send_msg_uart((char *)&set_datarate_cmd, sizeof(set_datarate_cmd));
+
+    int set_frequency_cmd = set_frequency(freq);
+    send_msg_uart((char *)&set_frequency_cmd, sizeof(set_frequency_cmd));
+
+    int set_power_cmd = set_power(power);
+    send_msg_uart((char *)&set_power_cmd, sizeof(set_power_cmd));
+}
+
+
+/**
  * @brief Sends a message to a specific LoRa module using Fixed Transmission mode.
  * * According to Section 5.1 of the manual, in fixed transmission mode, the first 
  * three bytes of the UART data are used as the target address and channel.
  * @param address   Target module address (ADDH and ADDL), from 0 to 65535.
- * @param channel   Target frequency channel (0 to 83).
+ * @param channel   Target frequency channel (0 to 80).
  * @param msg       Pointer to the data payload to be sent.
  * @param msg_size  Size of the payload (Max 200 bytes per packet by default).
  * @return int      0 on success.
  */
 int send_msg_LoRa(uint16_t address, uint8_t channel, char *msg, uint8_t msg_size) {
+    set_mode(LORA_MODE_TRANSMIT);
+    
     uint8_t total_size = 3 + msg_size;
     uint8_t data_buffer[total_size];
 
