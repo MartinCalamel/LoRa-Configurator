@@ -182,8 +182,33 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple LoRa Library for the E220-900T22D LoRa module. </p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;lgpio.h&gt;</span></div>
+<div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="LoRa_8h.html">src/LoRa/LoRa.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line">handle = lgGpiochipOpen(0);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> addr = 0x1234;</div>
+<div class="line"><a class="code hl_typedef" href="LoRa_8h.html#a5f48a9b9cc9f3f1ce22f052974033dcd">LoRa_baudrate_t</a> b = <a class="code hl_enumvalue" href="LoRa_8h.html#a29a753d35203ddbb237a7bb717c92e8ba59348e6ed712558198f72091a041df67">LORA_BAUDRATE_B9600</a>;</div>
+<div class="line"><a class="code hl_typedef" href="LoRa_8h.html#a27056a67ee03ba15ce23d15269739b8c">LoRa_datarate_t</a> d = <a class="code hl_enumvalue" href="LoRa_8h.html#acfa889d34c0d9e6c5b9b54883bfa0e4fa32fe82e63b747fd3f1d4d3d10fe34426">LORA_DATARATE_48</a>;</div>
+<div class="line"><span class="keywordtype">int</span> f = 20;</div>
+<div class="line"><a class="code hl_typedef" href="LoRa_8h.html#a6b7211c14ee5a0d7a3786a4462f78a55">LoRa_power_t</a> p = <a class="code hl_enumvalue" href="LoRa_8h.html#a4604cccd69e0c35410950968c19b47d2a89b25bc6dbbb2c0c8e1c43c524b75396">LORA_POWER_13</a>;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="LoRa_8c.html#a7a07bd5454bd46ce132cd97f4e928f02">config_LoRa</a>(handle, addr, b, d, f, p);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">char</span> msg[] = <span class="stringliteral">&quot;hello&quot;</span>;</div>
+<div class="line"><a class="code hl_function" href="LoRa_8c.html#a981a70b3be461b7806aaa0eed708fe96">send_msg_LoRa</a>(handle, 0x1234, 10, msg, <span class="keyword">sizeof</span>(msg));</div>
+<div class="line"> </div>
+<div class="line">lgGpiochipClose(handle);</div>
+<div class="ttc" id="aLoRa_8c_html_a7a07bd5454bd46ce132cd97f4e928f02"><div class="ttname"><a href="LoRa_8c.html#a7a07bd5454bd46ce132cd97f4e928f02">config_LoRa</a></div><div class="ttdeci">void config_LoRa(int handle, unsigned short address, LoRa_baudrate_t baudrate, LoRa_datarate_t datarate, int freq, LoRa_power_t power)</div><div class="ttdoc">Configure the LoRa module.</div><div class="ttdef"><b>Definition</b> LoRa.c:113</div></div>
+<div class="ttc" id="aLoRa_8c_html_a981a70b3be461b7806aaa0eed708fe96"><div class="ttname"><a href="LoRa_8c.html#a981a70b3be461b7806aaa0eed708fe96">send_msg_LoRa</a></div><div class="ttdeci">int send_msg_LoRa(int handle, uint16_t address, uint8_t channel, char *msg, uint8_t msg_size)</div><div class="ttdoc">Sends a message to a specific LoRa module using Fixed Transmission mode.</div><div class="ttdef"><b>Definition</b> LoRa.c:141</div></div>
 <div class="ttc" id="aLoRa_8h_html"><div class="ttname"><a href="LoRa_8h.html">LoRa.h</a></div><div class="ttdoc">Simple LoRa Library for the E220-900T22D LoRa module.</div></div>
+<div class="ttc" id="aLoRa_8h_html_a27056a67ee03ba15ce23d15269739b8c"><div class="ttname"><a href="LoRa_8h.html#a27056a67ee03ba15ce23d15269739b8c">LoRa_datarate_t</a></div><div class="ttdeci">enum LoRa_datarate LoRa_datarate_t</div><div class="ttdoc">List of the possibilities for datarate.</div></div>
+<div class="ttc" id="aLoRa_8h_html_a29a753d35203ddbb237a7bb717c92e8ba59348e6ed712558198f72091a041df67"><div class="ttname"><a href="LoRa_8h.html#a29a753d35203ddbb237a7bb717c92e8ba59348e6ed712558198f72091a041df67">LORA_BAUDRATE_B9600</a></div><div class="ttdeci">@ LORA_BAUDRATE_B9600</div><div class="ttdef"><b>Definition</b> LoRa.h:49</div></div>
+<div class="ttc" id="aLoRa_8h_html_a4604cccd69e0c35410950968c19b47d2a89b25bc6dbbb2c0c8e1c43c524b75396"><div class="ttname"><a href="LoRa_8h.html#a4604cccd69e0c35410950968c19b47d2a89b25bc6dbbb2c0c8e1c43c524b75396">LORA_POWER_13</a></div><div class="ttdeci">@ LORA_POWER_13</div><div class="ttdef"><b>Definition</b> LoRa.h:76</div></div>
+<div class="ttc" id="aLoRa_8h_html_a5f48a9b9cc9f3f1ce22f052974033dcd"><div class="ttname"><a href="LoRa_8h.html#a5f48a9b9cc9f3f1ce22f052974033dcd">LoRa_baudrate_t</a></div><div class="ttdeci">enum LoRa_baudrate LoRa_baudrate_t</div><div class="ttdoc">List of the possibilities for baudrate.</div></div>
+<div class="ttc" id="aLoRa_8h_html_a6b7211c14ee5a0d7a3786a4462f78a55"><div class="ttname"><a href="LoRa_8h.html#a6b7211c14ee5a0d7a3786a4462f78a55">LoRa_power_t</a></div><div class="ttdeci">enum LoRa_power LoRa_power_t</div><div class="ttdoc">list of possibilities for power</div></div>
+<div class="ttc" id="aLoRa_8h_html_acfa889d34c0d9e6c5b9b54883bfa0e4fa32fe82e63b747fd3f1d4d3d10fe34426"><div class="ttname"><a href="LoRa_8h.html#acfa889d34c0d9e6c5b9b54883bfa0e4fa32fe82e63b747fd3f1d4d3d10fe34426">LORA_DATARATE_48</a></div><div class="ttdeci">@ LORA_DATARATE_48</div><div class="ttdef"><b>Definition</b> LoRa.h:62</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a29a753d35203ddbb237a7bb717c92e8b" name="a29a753d35203ddbb237a7bb717c92e8b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29a753d35203ddbb237a7bb717c92e8b">&#9670;&#160;</a></span>LoRa_baudrate</h2>
