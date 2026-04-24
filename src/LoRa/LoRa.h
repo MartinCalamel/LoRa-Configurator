@@ -3,7 +3,24 @@
  * @brief Simple LoRa Library for the E220-900T22D LoRa module
  * @code
  *      #include <stdio.h>
+ *      #include <lgpio.h>
+ *      
  *      #include "src/LoRa/LoRa.h"
+ *      
+ *      handle = lgGpiochipOpen(0);
+ * 
+ *      unsigned short addr = 0x1234;
+ *      LoRa_baudrate_t b = LORA_BAUDRATE_B9600;
+ *      LoRa_datarate_t d = LORA_DATARATE_48;
+ *      int f = 20;
+ *      LoRa_power_t p = LORA_POWER_13;
+ * 
+ *      config_LoRa(handle, addr, b, d, f, p);
+ *      
+ *      char msg[] = "hello";
+ *      send_msg_LoRa(handle, 0x1234, 10, msg, sizeof(msg));
+ *      
+ *      lgGpiochipClose(handle);
  * 
  * @endcode
  */
