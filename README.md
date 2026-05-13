@@ -3,6 +3,7 @@ Module to setup and configure E220-900T22D LoRa module
 
 ## installation
 ```
+sudo apt install liblgpio-dev
 git clone https://github.com/MartinCalamel/LoRa-Configurator.git
 cd LoRa-Configurator
 make
