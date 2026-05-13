@@ -1,0 +1,19 @@
+<map id="src/LoRa/LoRa.c" name="src/LoRa/LoRa.c">
+<area shape="rect" id="Node000001" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="255,5,379,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,72,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="273,33,86,81,85,76,272,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="96,79,163,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="288,33,174,76,172,71,286,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="187,79,258,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="304,33,251,72,248,68,301,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="282,79,353,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="320,31,320,65,315,65,315,31"/>
+<area shape="rect" id="Node000006" href="$gpio__utils_8h.html" title="Simple GPIO helper library for Raspberry Pi 4 (lgpio backend)" alt="" coords="377,79,529,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="340,28,420,70,418,75,338,33"/>
+<area shape="rect" id="Node000007" href="$Uart_8h.html" title="Simple UART library for Raspberry Pi 4 board." alt="" coords="553,79,671,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="365,28,552,73,551,78,364,33"/>
+<area shape="rect" id="Node000008" href="$LoRa_8h.html" title="Simple LoRa Library for the E220&#45;900T22D LoRa module." alt="" coords="695,79,820,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="380,27,682,75,681,80,379,32"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="720,152,795,177"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="760,104,760,138,755,138,755,104"/>
+</map>

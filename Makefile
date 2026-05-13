@@ -8,7 +8,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -I. -g
 
 # Fichiers sources (.c)
-SRCS = main.c Uart/Uart.c LoRa/LoRa.c gpio/gpio_utils.c
+SRCS = main.c src/Uart/Uart.c src/LoRa/LoRa.c src/gpio/gpio_utils.c
 
 # Fichiers objets (.o)
 OBJS = $(SRCS:.c=.o)
